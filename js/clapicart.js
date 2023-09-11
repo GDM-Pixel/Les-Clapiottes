@@ -1,6 +1,5 @@
 jQuery(document).ready(function ($) {
 	//SELECTION DE DATE pour les CLAPIOTTES
-
 	function getNextAvailableDateClapi() {
 		const today = new Date();
 		let nextDay = new Date(today);
@@ -11,17 +10,35 @@ jQuery(document).ready(function ($) {
 		}
 
 		return nextDay;
-		//com de test trrrr
+
 	}
 
-	const defaultDateClapi = getNextAvailableDateClapi();
+	//NOUVEL AJOUT GDM
+	function getCookie(name) {
+		const value = "; " + document.cookie;
+		const parts = value.split("; " + name + "=");
+		if (parts.length === 2) return parts.pop().split(";").shift();
+	}
+
+	const existingDateClapi = getCookie('selected_date_clapi');
+	// Code existant pour obtenir la date par défaut
+
+	const defaultDateClapi = existingDateClapi || getNextAvailableDateClapi();
+	let formattedDateClapi;
+
+	if (typeof defaultDateClapi === 'object' && defaultDateClapi instanceof Date) {
+		const options = { day: "numeric", month: "long", year: "numeric" };
+		formattedDateClapi = defaultDateClapi.toLocaleDateString("fr-FR", options);
+	} else {
+		formattedDateClapi = defaultDateClapi; // ici, defaultDateClapi est déjà une chaîne
+	}
 
 	// Formater la date dans le format que vous souhaitez
-	const options = { day: "numeric", month: "long", year: "numeric" };
-	const formattedDateClapi = defaultDateClapi.toLocaleDateString(
-		"fr-FR",
-		options,
-	);
+	//const options = { day: "numeric", month: "long", year: "numeric" };
+	//const formattedDateClapi = defaultDateClapi.toLocaleDateString(
+	//	"fr-FR",
+	//	options,
+	//);
 
 	// Fonction pour vérifier et créer le cookie s'il n'existe pas
 	function setDefaultDateCookieIfNotExist() {
@@ -51,6 +68,7 @@ jQuery(document).ready(function ($) {
 	const containerclapi = $(".whencontainerclapiottes");
 	// Initialisation du datepicker
 	$("#delivery_date_clapi").datepicker({
+		defaultDate: defaultDateClapi,
 		minDate: "+1d",
 		beforeShowDay: function (date) {
 			const dayOfWeek = date.getDay();
@@ -65,6 +83,9 @@ jQuery(document).ready(function ($) {
 		},
 	});
 	//FIN DE SELECTION DE DATE pour les CLAPIOTTES
+
+
+
 
 	//SELECTION DE DATE pour LE BRUNCH
 
@@ -81,11 +102,21 @@ jQuery(document).ready(function ($) {
 		return nextDay;
 	}
 
-	const defaultDateBrunch = getNextAvailableDateBrunch();
-	const formattedDateBrunch = defaultDateBrunch.toLocaleDateString(
-		"fr-FR",
-		options,
-	);
+	//ON A DEJA LA FONCTION POUR RECUPERER LE NOM DU COOKIE
+
+	const existingDateBrunch = getCookie('selected_date_brunch');
+	// Code existant pour obtenir la date par défaut
+
+
+	const defaultDateBrunch = existingDateBrunch || getNextAvailableDateBrunch();
+	let formattedDateBrunch;
+
+	if (typeof defaultDateBrunch === 'object' && defaultDateBrunch instanceof Date) {
+		const options = { day: "numeric", month: "long", year: "numeric" };
+		formattedDateBrunch = defaultDateBrunch.toLocaleDateString("fr-FR", options);
+	} else {
+		formattedDateBrunch = defaultDateBrunch; // ici, defaultDateBrunch est déjà une chaîne
+	}
 
 	function setDefaultDateCookieIfNotExistBrunch() {
 		const cookieArray = document.cookie.split(";");
@@ -114,6 +145,7 @@ jQuery(document).ready(function ($) {
 	setDefaultDateCookieIfNotExistBrunch();
 	const containerbrunch = $(".whencontainerbrunch");
 	$("#delivery_date_brunch").datepicker({
+		defaultDate: defaultDateBrunch,
 		minDate: "+1d",
 		beforeShowDay: function (date) {
 			const dayOfWeek = date.getDay();
@@ -129,10 +161,10 @@ jQuery(document).ready(function ($) {
 
 	//FIN DE SELECTION DE DATE pour LE BRUNCH
 
-	
+
 
 	//Verification de la disponibilité des produits POUR LES CLAPIOTTES
-	let new_clapi_max_value; 
+	let new_clapi_max_value;
 	const checkAvailabilityClapi = function (date, containerclapi) {
 		$.ajax({
 			url: "https://les-clapiottes.fr/wp-admin/admin-ajax.php",
@@ -143,8 +175,8 @@ jQuery(document).ready(function ($) {
 			},
 			success: function (response) {
 				var data = JSON.parse(response);
-				console.log("Réponse AJAX CLAPIOTTES INTIALISATION : " + response);
-				console.log("Données JSON CLAPIOTTES INTIALISATION: ", data);
+				console.log("Réponse AJAX : " + response);
+				console.log("Données JSON : ", data);
 
 				if (data.status === "error") {
 					console.error("Erreur : " + data.message);
@@ -155,6 +187,16 @@ jQuery(document).ready(function ($) {
 					buttonClapiCart.addClass("button-error");
 					buttonClapiCart.text("Yen a plus !");
 				} else if (data.status === "success") {
+
+					if (typeof cart_counts !== "undefined") {
+						// Vérifie que cart_counts est défini
+						if (cart_counts.clapiottes > 0) {
+							$(".clapitab .qtity").attr("min", 1);
+						} else {
+							$(".clapitab .qtity").attr("min", 2); // ou toute autre valeur par défaut
+						}
+					}
+					
 					containerclapi
 						.find(".leftunit")
 						.text("Il reste " + data.available_clapi_stock + " unités");
@@ -164,9 +206,33 @@ jQuery(document).ready(function ($) {
 					const clapi_in_cart = data.count_clapiottes_in_cart;
 					const available_clapi_stock = data.available_clapi_stock;
 					new_clapi_max_value = available_clapi_stock - clapi_in_cart;
-					console.log("new_clapi_max_value dans la fonction = " + new_clapi_max_value,);
-					$('input[name="quantity"].qtity.clapitab-qty').attr("max",new_clapi_max_value,);
-					console.log("NOMBRE DE CLAPI DANS LE PANIER = " + clapi_in_cart,);
+					if (new_clapi_max_value <= 0) {
+						buttonClapiCart.addClass("button-error");
+						buttonClapiCart.text("Yen a plus !");
+					};
+					$('input[name="quantity"].qtity.clapitab-qty').attr("max", new_clapi_max_value,);
+
+					console.log("NOMBRE DE CLAPI DANS LE PANIER = " + clapi_in_cart + " et Nouvelle valeur MAX " + new_clapi_max_value);
+
+					$(document).trigger("clapi_max_value_updated");
+
+					if (clapiCartButtonClicked) {
+						$('input[name="quantity"].qtity.clapitab-qty').each(function () {
+							// Mettre à jour l'attribut 'max'
+							$(this).attr("max", new_clapi_max_value);
+							const currentQuantity = parseInt($(this).val(), 10);
+							// Si la valeur actuelle est supérieure au max, ajustez-la
+
+							if (!isNaN(currentQuantity) && currentQuantity > 0 && currentQuantity > new_clapi_max_value) {
+								$(this).val(new_clapi_max_value);
+							}
+						});
+						if (clapi_in_cart > 0) {
+							$(".clapitab .qtity.clapitab-qty").attr("min", "1");
+						};
+						clapiCartButtonClicked = false; // Remettre la variable à false
+					};
+
 				}
 			},
 			error: function (error) {
@@ -175,20 +241,7 @@ jQuery(document).ready(function ($) {
 		});
 	};
 
-	//SI cart_counts.clapiottes > 1 ALORS $(.clapitab .qtity).attr("min", 1)
-	if (typeof cart_counts !== "undefined") {
-		// Vérifie que cart_counts est défini
-		if (cart_counts.clapiottes > 0) {
-			$(".clapitab .qtity").attr("min", 1);
-		} else {
-			$(".clapitab .qtity").attr("min", 2); // ou toute autre valeur par défaut
-		}
-		if (cart_counts.brunch > 0) {
-			$(".brunchtab .qtity").attr("min", 1);
-		} else {
-			$(".brunchtab .qtity").attr("min", 2); // ou toute autre valeur par défaut
-		}
-	}
+	
 
 	// Définir la date par défaut dans le champ
 	$("#delivery_date_clapi").val(formattedDateClapi);
@@ -199,7 +252,7 @@ jQuery(document).ready(function ($) {
 	checkAvailabilityClapi(formattedDateClapi, containerclapi);
 
 	//FIN DE LA Verification de la disponibilité des produits POUR LES CLAPIOTTEs
-    
+
 	//Verification de la disponibilité des produits POUR LE BRUNCH
 	let new_brunch_max_value;
 	const checkAvailabilityBrunch = function (date, containerbrunch) {
@@ -224,6 +277,18 @@ jQuery(document).ready(function ($) {
 					buttonBrunchCart.addClass("button-error");
 					buttonBrunchCart.text("Yen a plus !");
 				} else if (data.status === "success") {
+
+					
+					if (typeof cart_counts !== "undefined") {
+						// Vérifie que cart_counts est défini
+						if (cart_counts.brunch > 0) {
+							$(".brunchtab .qtity").attr("min", 1);
+						} else {
+							$(".brunchtab .qtity").attr("min", 2);
+							console.log("CA MARCHE");
+						}
+					}
+
 					containerbrunch
 						.find(".leftunit")
 						.text("Il reste " + data.available_brunch_stock + " unités");
@@ -233,8 +298,31 @@ jQuery(document).ready(function ($) {
 					const brunch_in_cart = data.count_brunch_in_cart;
 					const available_brunch_stock = data.available_brunch_stock;
 					new_brunch_max_value = available_brunch_stock - brunch_in_cart;
-					$('input[name="quantity"].qtity.brunchtab-qty').attr("max",new_brunch_max_value,);
-					console.log("NOMBRE DE BRUNCH DANS LE PANIER = " + brunch_in_cart);
+					if (new_brunch_max_value <= 0) {
+						buttonBrunchCart.addClass("button-error");
+						buttonBrunchCart.text("Yen a plus !");
+					};
+					$('input[name="quantity"].qtity.brunchtab-qty').attr("max", new_brunch_max_value,);
+
+					console.log("NOMBRE DE BRUNCH DANS LE PANIER = " + brunch_in_cart + " et Nouvelle valeur MAX " + new_brunch_max_value);
+
+					$(document).trigger("clapi_max_value_updated");
+
+					if (brunchCartButtonClicked) {
+						$('input[name="quantity"].qtity.brunchtab-qty').each(function () {
+							// Mettre à jour l'attribut 'max'
+							$(this).attr("max", new_brunch_max_value);
+							const currentQuantity = parseInt($(this).val(), 10);
+							// Si la valeur actuelle est supérieure au max, ajustez-la
+							if (!isNaN(currentQuantity) && currentQuantity > 0 && currentQuantity > new_brunch_max_value) {
+								$(this).val(new_brunch_max_value);
+							} 
+						});
+						if (brunch_in_cart > 0) {
+							$(".brunchtab .qtity.brunchtab-qty").attr("min", "1");};
+						brunchCartButtonClicked = false; // Remettre la variable à false
+					};
+
 				}
 			},
 			error: function (error) {
@@ -266,22 +354,29 @@ jQuery(document).ready(function ($) {
 		cartUpdater.find(".dynamicprice").text(newTotalPrice);
 	};
 
+
+	let clapiCartButtonClicked = false; 
 	//On remet à jour le compte de produit dispo quand on valide le panier :
 	$(document).on("click", ".clapitab .add_to_cart_button", function () {
+		clapiCartButtonClicked = true;
 		setTimeout(function () {
 			// Récupérer la date depuis le cookie
-			let selectedDateClapi = getCookie("selected_date_clapi"); // Vous devrez implémenter la fonction getCookie
+			let selectedDateClapi = getCookie("selected_date_clapi");
 			checkAvailabilityClapi(
 				selectedDateClapi || formattedDateClapi,
-				containerclapi,
-			); // Utiliser la date du cookie, ou la date par défaut si le cookie n'est pas défini
-			console.log("fonction de vérif Clapi relancée");
-		}, 500);
+				containerclapi
+			);
+			console.log("new_clapi_max_value pour voir car bouton panier cliqué = " + new_clapi_max_value); 
+	
+		}, 500); 
 	});
 
+	let brunchCartButtonClicked = false; 
 	//On remet à jour le compte de produit dispo quand on valide le panier :
 	$(document).on("click", ".brunchtab .add_to_cart_button", function () {
+		brunchCartButtonClicked = true;
 		setTimeout(function () {
+			// Récupérer la date depuis le cookie
 			let selectedDateBrunch = getCookie("selected_date_brunch");
 			checkAvailabilityBrunch(
 				selectedDateBrunch || formattedDateBrunch,
