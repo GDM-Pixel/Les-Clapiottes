@@ -1,0 +1,77 @@
+2023-08-17T07:24:09+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:146
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/rest-api/class-wp-rest-server.php(1188): get_cart_data()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/rest-api/class-wp-rest-server.php(1035): WP_REST_Server->respond_to_request()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/rest-api/class-wp-rest-server.php(447): WP_REST_Server->dispatch()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-includes/rest-api.php(418): WP_REST_Server->serve_request()
+#4 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): rest_api_loaded()
+#5 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(565): WP_Hook->do_action()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp.php(398): do_action_ref_array()
+#8 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp.php(779): WP->parse_request()
+#9 /var/www/les-clapiottes.fr/htdocs/wp-includes/functions.php(1335): WP->main()
+#10 /var/www/les-clapiottes.fr/htdocs/wp-blog-header.php(16): wp()
+#11 /var/www/les-clapiottes.fr/htdocs/index.php(17): require('...')
+#12 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 146
+
+2023-08-17T07:29:20+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:146
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/rest-api/class-wp-rest-server.php(1188): get_cart_data()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/rest-api/class-wp-rest-server.php(1035): WP_REST_Server->respond_to_request()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/rest-api/class-wp-rest-server.php(447): WP_REST_Server->dispatch()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-includes/rest-api.php(418): WP_REST_Server->serve_request()
+#4 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): rest_api_loaded()
+#5 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(565): WP_Hook->do_action()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp.php(398): do_action_ref_array()
+#8 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp.php(779): WP->parse_request()
+#9 /var/www/les-clapiottes.fr/htdocs/wp-includes/functions.php(1335): WP->main()
+#10 /var/www/les-clapiottes.fr/htdocs/wp-blog-header.php(16): wp()
+#11 /var/www/les-clapiottes.fr/htdocs/index.php(17): require('...')
+#12 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 146
+
+2023-08-17T07:30:26+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:146
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/rest-api/class-wp-rest-server.php(1188): get_cart_data()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/rest-api/class-wp-rest-server.php(1035): WP_REST_Server->respond_to_request()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/rest-api/class-wp-rest-server.php(447): WP_REST_Server->dispatch()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-includes/rest-api.php(418): WP_REST_Server->serve_request()
+#4 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): rest_api_loaded()
+#5 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(565): WP_Hook->do_action()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp.php(398): do_action_ref_array()
+#8 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp.php(779): WP->parse_request()
+#9 /var/www/les-clapiottes.fr/htdocs/wp-includes/functions.php(1335): WP->main()
+#10 /var/www/les-clapiottes.fr/htdocs/wp-blog-header.php(16): wp()
+#11 /var/www/les-clapiottes.fr/htdocs/index.php(17): require('...')
+#12 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 146
+
+2023-08-17T07:34:21+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/class-wc-cart-session.php:86
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): WC_Cart_Session->get_cart_from_session()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-settings.php(654): do_action()
+#4 /var/www/les-clapiottes.fr/wp-config.php(108): require_once('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-load.php(55): require_once('...')
+#6 /var/www/les-clapiottes.fr/htdocs/wp-blog-header.php(13): require_once('...')
+#7 /var/www/les-clapiottes.fr/htdocs/index.php(17): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/class-wc-cart-session.php à la ligne 86
+
+2023-08-17T07:35:22+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/class-wc-cart-session.php:86
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): WC_Cart_Session->get_cart_from_session()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-settings.php(654): do_action()
+#4 /var/www/les-clapiottes.fr/wp-config.php(108): require_once('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-load.php(55): require_once('...')
+#6 /var/www/les-clapiottes.fr/htdocs/wp-blog-header.php(13): require_once('...')
+#7 /var/www/les-clapiottes.fr/htdocs/index.php(17): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/class-wc-cart-session.php à la ligne 86
+

@@ -1,0 +1,10 @@
+2023-09-07T15:12:09+00:00 CRITICAL syntax error, unexpected token "/", expecting end of file dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 193
+
+2023-09-07T17:29:28+00:00 CRITICAL syntax error, unexpected token ";" dans /var/www/les-clapiottes.fr/htdocs/assets/plugins/gp-premium/elements/class-hooks.php(215) : eval()'d code à la ligne 2
+
+2023-09-07T17:29:48+00:00 CRITICAL syntax error, unexpected token ";" dans /var/www/les-clapiottes.fr/htdocs/assets/plugins/gp-premium/elements/class-hooks.php(215) : eval()'d code à la ligne 2
+
+2023-09-07T17:29:50+00:00 CRITICAL syntax error, unexpected token ";" dans /var/www/les-clapiottes.fr/htdocs/assets/plugins/gp-premium/elements/class-hooks.php(215) : eval()'d code à la ligne 2
+
+2023-09-07T17:30:28+00:00 CRITICAL syntax error, unexpected token ";" dans /var/www/les-clapiottes.fr/htdocs/assets/plugins/gp-premium/elements/class-hooks.php(215) : eval()'d code à la ligne 1
+

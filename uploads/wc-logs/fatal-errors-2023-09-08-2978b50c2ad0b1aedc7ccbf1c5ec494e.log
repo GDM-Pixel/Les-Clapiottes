@@ -1,0 +1,240 @@
+2023-09-08T08:52:59+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "display_selected_date_clapi_in_admin_order" not found or invalid function name in /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php:310
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#2 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-data.php(483): do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Data::output()
+#4 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#6 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php à la ligne 310
+
+2023-09-08T08:59:07+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on int in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:275
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 275
+
+2023-09-08T08:59:37+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on int in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:275
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 275
+
+2023-09-08T08:59:56+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on int in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:275
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 275
+
+2023-09-08T09:01:44+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function display_selected_date_clapi_in_admin_order(), 1 passed in /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php on line 310 and exactly 2 expected in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:273
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 273
+
+2023-09-08T09:01:56+00:00 CRITICAL syntax error, unexpected token "}", expecting "," or ";" dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 276
+
+2023-09-08T09:02:05+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function display_selected_date_clapi_in_admin_order(), 1 passed in /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php on line 310 and exactly 2 expected in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:273
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 273
+
+2023-09-08T09:05:26+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function display_selected_date_clapi_in_admin_order(), 1 passed in /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php on line 310 and exactly 2 expected in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:272
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 272
+
+2023-09-08T09:05:45+00:00 CRITICAL syntax error, unexpected token "}", expecting "," or ";" dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 275
+
+2023-09-08T09:05:50+00:00 CRITICAL syntax error, unexpected token "}", expecting "," or ";" dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 275
+
+2023-09-08T09:05:51+00:00 CRITICAL syntax error, unexpected token "}", expecting "," or ";" dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 275
+
+2023-09-08T09:05:59+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function display_selected_date_clapi_in_admin_order(), 1 passed in /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php on line 310 and exactly 2 expected in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:272
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 272
+
+2023-09-08T09:06:23+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function display_selected_date_clapi_in_admin_order(), 1 passed in /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php on line 310 and exactly 2 expected in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:272
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 272
+
+2023-09-08T09:06:31+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function display_selected_date_clapi_in_admin_order(), 1 passed in /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php on line 310 and exactly 2 expected in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:272
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 272
+
+2023-09-08T09:06:42+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function display_selected_date_clapi_in_admin_order(), 1 passed in /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php on line 310 and exactly 2 expected in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:272
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 272
+
+2023-09-08T09:06:43+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function display_selected_date_clapi_in_admin_order(), 1 passed in /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php on line 310 and exactly 2 expected in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:272
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 272
+
+2023-09-08T09:07:15+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function display_selected_date_clapi_in_admin_order(), 1 passed in /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php on line 310 and exactly 2 expected in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:272
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 272
+
+2023-09-08T09:07:30+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function display_selected_date_clapi_in_admin_order(), 1 passed in /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php on line 310 and exactly 2 expected in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:272
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 272
+
+2023-09-08T09:07:56+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function display_selected_date_clapi_in_admin_order(), 1 passed in /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php on line 310 and exactly 2 expected in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:272
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 272
+
+2023-09-08T09:08:31+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function display_selected_date_clapi_in_admin_order(), 1 passed in /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php on line 310 and exactly 2 expected in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:272
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 272
+
+2023-09-08T09:09:31+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function display_selected_date_clapi_in_admin_order(), 1 passed in /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php on line 310 and exactly 2 expected in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:272
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 272
+
+2023-09-08T09:11:02+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on bool in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:277
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): display_selected_date_clapi_in_admin_order()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/views/html-order-items.php(77): do_action()
+#4 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/includes/admin/meta-boxes/class-wc-meta-box-order-items.php(40): include('...')
+#5 /var/www/les-clapiottes.fr/htdocs/wp-admin/includes/template.php(1443): WC_Meta_Box_Order_Items::output()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-admin/edit-form-advanced.php(688): do_meta_boxes()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-admin/post.php(206): require('...')
+#8 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 277
+

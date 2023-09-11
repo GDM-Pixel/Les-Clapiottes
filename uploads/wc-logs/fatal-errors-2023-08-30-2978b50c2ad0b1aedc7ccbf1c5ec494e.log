@@ -1,0 +1,6 @@
+2023-08-30T10:55:23+00:00 CRITICAL syntax error, unexpected token "<" dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/woocommerce/myaccount/orders.php à la ligne 110
+
+2023-08-30T12:05:17+00:00 CRITICAL syntax error, unexpected token "if" dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/woocommerce/cart/cart.php à la ligne 80
+
+2023-08-30T12:05:23+00:00 CRITICAL syntax error, unexpected token "if" dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/woocommerce/cart/cart.php à la ligne 80
+

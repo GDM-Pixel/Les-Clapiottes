@@ -1,0 +1,12 @@
+/*
+ Theme Name:   Les-Clapiottes
+ Theme URI:    https://les-clapiottes
+ Description:  Theme du traiteur Les Clapiottes
+ Author:       Charles Annoni
+ Author URI:   https://www.gdm-pixel.fr
+ Template:     generatepress
+ Version:      0.1
+*/
+.site.grid-container.container {
+	padding: 0;
+}

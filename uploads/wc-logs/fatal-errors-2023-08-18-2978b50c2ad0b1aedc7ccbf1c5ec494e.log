@@ -1,0 +1,60 @@
+2023-08-18T14:04:44+00:00 CRITICAL Uncaught InvalidArgumentException: Le groupe « rocket-rucss » n’existe pas. in /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:907
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php(799): ActionScheduler_DBStore->claim_actions()
+#1 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/ActionScheduler_QueueRunner.php(157): ActionScheduler_DBStore->stake_claim()
+#2 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/ActionScheduler_QueueRunner.php(136): ActionScheduler_QueueRunner->do_batch()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): ActionScheduler_QueueRunner->run()
+#4 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#5 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(565): WP_Hook->do_action()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-cron.php(191): do_action_ref_array()
+#7 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php à la ligne 907
+
+2023-08-18T14:05:56+00:00 CRITICAL Uncaught InvalidArgumentException: Le groupe « rocket-rucss » n’existe pas. in /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:907
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php(799): ActionScheduler_DBStore->claim_actions()
+#1 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/ActionScheduler_QueueRunner.php(157): ActionScheduler_DBStore->stake_claim()
+#2 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/ActionScheduler_QueueRunner.php(136): ActionScheduler_QueueRunner->do_batch()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): ActionScheduler_QueueRunner->run()
+#4 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#5 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(565): WP_Hook->do_action()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-cron.php(191): do_action_ref_array()
+#7 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php à la ligne 907
+
+2023-08-18T14:09:37+00:00 CRITICAL Uncaught InvalidArgumentException: Le groupe « rocket-rucss » n’existe pas. in /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:907
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php(799): ActionScheduler_DBStore->claim_actions()
+#1 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/ActionScheduler_QueueRunner.php(157): ActionScheduler_DBStore->stake_claim()
+#2 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/ActionScheduler_QueueRunner.php(136): ActionScheduler_QueueRunner->do_batch()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): ActionScheduler_QueueRunner->run()
+#4 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#5 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(565): WP_Hook->do_action()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-cron.php(191): do_action_ref_array()
+#7 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php à la ligne 907
+
+2023-08-18T14:11:38+00:00 CRITICAL Uncaught InvalidArgumentException: Le groupe « rocket-rucss » n’existe pas. in /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:907
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php(799): ActionScheduler_DBStore->claim_actions()
+#1 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/ActionScheduler_QueueRunner.php(157): ActionScheduler_DBStore->stake_claim()
+#2 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/ActionScheduler_QueueRunner.php(136): ActionScheduler_QueueRunner->do_batch()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): ActionScheduler_QueueRunner->run()
+#4 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#5 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(565): WP_Hook->do_action()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-cron.php(191): do_action_ref_array()
+#7 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php à la ligne 907
+
+2023-08-18T14:15:02+00:00 CRITICAL Uncaught InvalidArgumentException: Le groupe « rocket-rucss » n’existe pas. in /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:907
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php(799): ActionScheduler_DBStore->claim_actions()
+#1 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/ActionScheduler_QueueRunner.php(157): ActionScheduler_DBStore->stake_claim()
+#2 /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/ActionScheduler_QueueRunner.php(136): ActionScheduler_QueueRunner->do_batch()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): ActionScheduler_QueueRunner->run()
+#4 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#5 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(565): WP_Hook->do_action()
+#6 /var/www/les-clapiottes.fr/htdocs/wp-cron.php(191): do_action_ref_array()
+#7 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php à la ligne 907
+

@@ -1,0 +1,58 @@
+2023-09-05T10:43:51+00:00 CRITICAL Uncaught Error: Call to undefined function get_field() in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:76
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/shortcodes.php(395): custom_portfolio_shortcode()
+#1 [internal function]: do_shortcode_tag()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/shortcodes.php(235): preg_replace_callback()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): do_shortcode()
+#4 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(205): WP_Hook->apply_filters()
+#5 /var/www/les-clapiottes.fr/htdocs/wp-includes/post-template.php(256): apply_filters()
+#6 /var/www/les-clapiottes.fr/htdocs/assets/themes/generatepress/content-page.php(73): the_content()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-includes/template.php(787): require('...')
+#8 /var/www/les-clapiottes.fr/htdocs/wp-includes/template.php(720): load_template()
+#9 /var/www/les-clapiottes.fr/htdocs/wp-includes/general-template.php(206): locate_template()
+#10 /var/www/les-clapiottes.fr/htdocs/assets/themes/generatepress/inc/theme-functions.php(568): get_template_part()
+#11 /var/www/les-clapiottes.fr/htdocs/assets/themes/generatepress/page.php(34): generate_do_template_part()
+#12 /var/www/les-clapiottes.fr/htdocs/wp-includes/template-loader.php(106): include('...')
+#13 /var/www/les-clapiottes.fr/htdocs/wp-blog-header.php(19): require_once('...')
+#14 /var/www/les-clapiottes.fr/htdocs/index.php(17): require('...')
+#15 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 76
+
+2023-09-05T10:43:56+00:00 CRITICAL Uncaught Error: Call to undefined function get_field() in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:76
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/shortcodes.php(395): custom_portfolio_shortcode()
+#1 [internal function]: do_shortcode_tag()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/shortcodes.php(235): preg_replace_callback()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): do_shortcode()
+#4 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(205): WP_Hook->apply_filters()
+#5 /var/www/les-clapiottes.fr/htdocs/wp-includes/post-template.php(256): apply_filters()
+#6 /var/www/les-clapiottes.fr/htdocs/assets/themes/generatepress/content-page.php(73): the_content()
+#7 /var/www/les-clapiottes.fr/htdocs/wp-includes/template.php(787): require('...')
+#8 /var/www/les-clapiottes.fr/htdocs/wp-includes/template.php(720): load_template()
+#9 /var/www/les-clapiottes.fr/htdocs/wp-includes/general-template.php(206): locate_template()
+#10 /var/www/les-clapiottes.fr/htdocs/assets/themes/generatepress/inc/theme-functions.php(568): get_template_part()
+#11 /var/www/les-clapiottes.fr/htdocs/assets/themes/generatepress/page.php(34): generate_do_template_part()
+#12 /var/www/les-clapiottes.fr/htdocs/wp-includes/template-loader.php(106): include('...')
+#13 /var/www/les-clapiottes.fr/htdocs/wp-blog-header.php(19): require_once('...')
+#14 /var/www/les-clapiottes.fr/htdocs/index.php(17): require('...')
+#15 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 76
+
+2023-09-05T12:28:17+00:00 CRITICAL Uncaught Error: Call to a member function format() on bool in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:204
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): check_availability()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-admin/admin-ajax.php(188): do_action()
+#4 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 204
+
+2023-09-05T12:28:22+00:00 CRITICAL Uncaught Error: Call to a member function format() on bool in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:204
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): check_availability()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-admin/admin-ajax.php(188): do_action()
+#4 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 204
+

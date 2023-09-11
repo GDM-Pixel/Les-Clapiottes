@@ -1,0 +1,9 @@
+2023-09-10T11:57:21+00:00 CRITICAL Uncaught Error: Call to a member function get_cart() on null in /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php:208
+Stack trace:
+#0 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(310): check_availability()
+#1 /var/www/les-clapiottes.fr/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#2 /var/www/les-clapiottes.fr/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#3 /var/www/les-clapiottes.fr/htdocs/wp-admin/admin-ajax.php(188): do_action()
+#4 {main}
+  thrown dans /var/www/les-clapiottes.fr/htdocs/assets/themes/clapiottes/functions.php à la ligne 208
+

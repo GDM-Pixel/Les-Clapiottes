@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="fr-FR" prefix="og: http://ogp.me/ns#">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+<title>Les Clapiottes &#124;</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Libre%20Baskerville%3Aregular%2C700%7CPoppins%3Aregular%2Citalic%2C500%2C600%2C700%2C800%7CLibre%20Baskerville%3Aregular%7CPoppins%3A600&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre%20Baskerville%3Aregular%2C700%7CPoppins%3Aregular%2Citalic%2C500%2C600%2C700%2C800%7CLibre%20Baskerville%3Aregular%7CPoppins%3A600&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre%20Baskerville%3Aregular%2C700%7CPoppins%3Aregular%2Citalic%2C500%2C600%2C700%2C800%7CLibre%20Baskerville%3Aregular%7CPoppins%3A600&#038;display=swap" /></noscript>
+
+
+<!-- SEO by Squirrly SEO 12.3.01 - https://plugin.squirrly.co/ -->
+
+<meta name="description" content="Plateau apéritif livré à domicile à Caen ! Plateaux apéritifs &#038; Brunch à Caen Commander Des produits fraisPas de trucs qui viennent de l’autre bout de la planète Fait maisonTout est fait maison, avec amour, et préparé à deux pas de chez vous Produit de saisonNos produits respectent le rythme des &#124; Les Clapiottes" />
+<link rel="canonical" href="https://les-clapiottes.fr" />
+<link rel="alternate" type="application/rss+xml" href="https://les-clapiottes.fr/sitemap.xml" />
+
+<meta name="dc.language" content="fr-FR" />
+<meta name="dc.language.iso" content="fr_FR" />
+<meta name="dc.publisher" content="Charles-GDM" />
+<meta name="dc.title" content="Les Clapiottes &#124;" />
+<meta name="dc.description" content="Plateau apéritif livré à domicile à Caen ! Plateaux apéritifs &#038; Brunch à Caen Commander Des produits fraisPas de trucs qui viennent de l’autre bout de la planète Fait maisonTout est fait maison, avec amour, et préparé à deux pas de chez vous Produit de saisonNos produits respectent le rythme des &#124; Les Clapiottes" />
+<meta name="dc.date.issued" content="2023-09-05" />
+
+<meta property="og:url" content="https://les-clapiottes.fr" />
+<meta property="og:title" content="Les Clapiottes &#124;" />
+<meta property="og:description" content="Plateau apéritif livré à domicile à Caen ! Plateaux apéritifs &#038; Brunch à Caen Commander Des produits fraisPas de trucs qui viennent de l’autre bout de la planète Fait maisonTout est fait maison," />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://les-clapiottes.fr/assets/uploads/charlotte-de-la-casiniere.jpg" />
+<meta property="og:image:width" content="500" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:site_name" content="Les Clapiottes" />
+<meta property="og:locale" content="en_US" />
+
+<meta property="twitter:url" content="https://les-clapiottes.fr" />
+<meta property="twitter:title" content="Les Clapiottes &#124;" />
+<meta property="twitter:description" content="Plateau apéritif livré à domicile à Caen ! Plateaux apéritifs &#038; Brunch à Caen Commander Des produits fraisPas de trucs qui viennent de l’autre bout de la planète Fait maisonTout est fait maison, avec amour, et préparé à deux pas de chez vous Produit de saisonNos produits re" />
+<meta property="twitter:image" content="https://les-clapiottes.fr/assets/uploads/charlotte-de-la-casiniere.jpg" />
+<meta property="twitter:domain" content="Les Clapiottes" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:creator" content="@Les_Clapiottes" />
+<meta property="twitter:site" content="@Les_Clapiottes" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://les-clapiottes.fr#Organization","url":"https://les-clapiottes.fr","name":"Les Clapiottes","logo":{"@type":"ImageObject","url":"https://les-clapiottes.fr/assets/uploads/logo-clapiottes.png","@id":"https://les-clapiottes.fr#logo","width":"192","height":"62","caption":"Les Clapiottes"},"contactPoint":{"@type":"ContactPoint","telephone":"+33-6-4976-1726","contactType":"reservations","@id":"https://les-clapiottes.fr#contactpoint"},"address":{"@type":"PostalAddress","addressLocality":"Caen","addressRegion":"Normandie","postalCode":"14000","addressCountry":"FR","@id":"https://les-clapiottes.fr#address"},"description":"Les Clapiottes, votre traiteur \u00e0 Caen, vous propose de d\u00e9licieux plateaux pour l'ap\u00e9ritifs, et de succulents brunch pour lever le pied le week-end !","sameAs":["https://www.facebook.com/les.clapiottes/","https://twitter.com/Les_Clapiottes","https://www.instagram.com/lesclapiottes/","https://www.youtube.com/channel/UCl_A5g0abWIqR_uVVloWxkw"]},{"@type":"WebSite","@id":"https://les-clapiottes.fr#website","url":"https://les-clapiottes.fr","name":"Les Clapiottes","headline":"Plateau ap\u00e9ritif livr\u00e9 \u00e0 domicile \u00e0 Caen ! Plateaux ap\u00e9ritifs &#038; Brunch \u00e0 Caen Commander Des produits fraisPas de trucs qui viennent de l\u2019autre bout de la plan\u00e8te Fait maisonTout est fait maison, avec amour, et pr\u00e9par\u00e9 \u00e0 deux pas de chez vous Produit de saisonNos produits respectent le rythme des | Les Clapiottes","mainEntityOfPage":{"@type":"WebPage","url":"https://les-clapiottes.fr"},"datePublished":"2023-08-16T11:02:40+00:00","dateModified":"2023-09-05T13:43:28+00:00","image":{"@type":"ImageObject","url":"https://les-clapiottes.fr/assets/uploads/charlotte-de-la-casiniere.jpg","height":"500","width":"500"},"potentialAction":{"@type":"SearchAction","target":"https://les-clapiottes.fr/?s={search_term_string}","query-input":"required name=search_term_string"},"author":{"@type":"Person","@id":"https://les-clapiottes.fr#person","url":"https://les-clapiottes.fr","name":"Charles-GDM"},"publisher":{"@type":"Organization","@id":"https://les-clapiottes.fr#Organization","url":"https://les-clapiottes.fr","name":"Les Clapiottes","logo":{"@type":"ImageObject","url":"https://les-clapiottes.fr/assets/uploads/logo-clapiottes.png","@id":"https://les-clapiottes.fr#logo","width":"192","height":"62","caption":"Les Clapiottes"},"contactPoint":{"@type":"ContactPoint","telephone":"+33-6-4976-1726","contactType":"reservations","@id":"https://les-clapiottes.fr#contactpoint"},"address":{"@type":"PostalAddress","addressLocality":"Caen","addressRegion":"Normandie","postalCode":"14000","addressCountry":"FR","@id":"https://les-clapiottes.fr#address"},"description":"Les Clapiottes, votre traiteur \u00e0 Caen, vous propose de d\u00e9licieux plateaux pour l'ap\u00e9ritifs, et de succulents brunch pour lever le pied le week-end !","sameAs":["https://www.facebook.com/les.clapiottes/","https://twitter.com/Les_Clapiottes","https://www.instagram.com/lesclapiottes/","https://www.youtube.com/channel/UCl_A5g0abWIqR_uVVloWxkw"]}}]}</script>
+<!-- /SEO by Squirrly SEO - WordPress SEO Plugin -->
+
+
+
+	
+	
+<meta name='robots' content='noindex, nofollow' />
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link href='https://fonts.googleapis.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Les Clapiottes &raquo; Flux" href="https://les-clapiottes.fr/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Les Clapiottes &raquo; Flux des commentaires" href="https://les-clapiottes.fr/comments/feed/" />
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://les-clapiottes.fr/wp-includes/css/dist/block-library/style.min.css?ver=6.3.1' media='all' />
+<link data-minify="1" rel='stylesheet' id='wc-blocks-vendors-style-css' href='https://les-clapiottes.fr/assets/cache/min/1/assets/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css?ver=1693914397' media='all' />
+<link data-minify="1" rel='stylesheet' id='wc-blocks-style-css' href='https://les-clapiottes.fr/assets/cache/min/1/assets/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-style.css?ver=1693914397' media='all' />
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--contrast: var(--contrast);--wp--preset--color--contrast-2: var(--contrast-2);--wp--preset--color--contrast-3: var(--contrast-3);--wp--preset--color--base: var(--base);--wp--preset--color--base-2: var(--base-2);--wp--preset--color--base-3: var(--base-3);--wp--preset--color--accent: var(--accent);--wp--preset--color--global-color-8: var(--global-color-8);--wp--preset--color--global-color-9: var(--global-color-9);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='stylesheet' id='contact-form-7-css' href='https://les-clapiottes.fr/assets/cache/min/1/assets/plugins/contact-form-7/includes/css/styles.css?ver=1693914397' media='all' />
+<link data-minify="1" rel='stylesheet' id='woocommerce-layout-css' href='https://les-clapiottes.fr/assets/cache/min/1/assets/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=1693914397' media='all' />
+<link data-minify="1" rel='stylesheet' id='woocommerce-smallscreen-css' href='https://les-clapiottes.fr/assets/cache/min/1/assets/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=1693914397' media='only screen and (max-width: 768px)' />
+<link data-minify="1" rel='stylesheet' id='woocommerce-general-css' href='https://les-clapiottes.fr/assets/cache/min/1/assets/plugins/woocommerce/assets/css/woocommerce.css?ver=1693914397' media='all' />
+<style id='woocommerce-inline-inline-css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<style id='wpgb-head-inline-css'>
+.wp-grid-builder:not(.wpgb-template),.wpgb-facet{opacity:0.01}.wpgb-facet fieldset{margin:0;padding:0;border:none;outline:none;box-shadow:none}.wpgb-facet fieldset:last-child{margin-bottom:40px;}.wpgb-facet fieldset legend.wpgb-sr-only{height:1px;width:1px}
+</style>
+<link rel='stylesheet' id='parent-style-css' href='https://les-clapiottes.fr/assets/themes/generatepress/style.css?ver=6.3.1' media='all' />
+<link data-minify="1" rel='stylesheet' id='custom-style-css' href='https://les-clapiottes.fr/assets/cache/min/1/assets/themes/clapiottes/custom.css?ver=1693914397' media='all' />
+<link data-minify="1" rel='stylesheet' id='jquery-ui-css-css' href='https://les-clapiottes.fr/assets/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.min.css?ver=1693914397' media='all' />
+<link rel='stylesheet' id='generate-widget-areas-css' href='https://les-clapiottes.fr/assets/themes/generatepress/assets/css/components/widget-areas.min.css?ver=3.3.1' media='all' />
+<link rel='stylesheet' id='generate-style-css' href='https://les-clapiottes.fr/assets/themes/generatepress/assets/css/main.min.css?ver=3.3.1' media='all' />
+<style id='generate-style-inline-css'>
+body{background-color:var(--base-2);color:var(--contrast);}a{color:var(--accent);}a:hover, a:focus, a:active{color:var(--global-color-9);}.grid-container{max-width:1280px;}.wp-block-group__inner-container{max-width:1280px;margin-left:auto;margin-right:auto;}.site-header .header-image{width:200px;}:root{--contrast:#0A090C;--contrast-2:#2d2b31;--contrast-3:#b2b2be;--base:#ffffff;--base-2:#ffffff;--base-3:#ffffff;--accent:#495F41;--global-color-8:#D9ABB5;--global-color-9:#6EB257;}:root .has-contrast-color{color:var(--contrast);}:root .has-contrast-background-color{background-color:var(--contrast);}:root .has-contrast-2-color{color:var(--contrast-2);}:root .has-contrast-2-background-color{background-color:var(--contrast-2);}:root .has-contrast-3-color{color:var(--contrast-3);}:root .has-contrast-3-background-color{background-color:var(--contrast-3);}:root .has-base-color{color:var(--base);}:root .has-base-background-color{background-color:var(--base);}:root .has-base-2-color{color:var(--base-2);}:root .has-base-2-background-color{background-color:var(--base-2);}:root .has-base-3-color{color:var(--base-3);}:root .has-base-3-background-color{background-color:var(--base-3);}:root .has-accent-color{color:var(--accent);}:root .has-accent-background-color{background-color:var(--accent);}:root .has-global-color-8-color{color:var(--global-color-8);}:root .has-global-color-8-background-color{background-color:var(--global-color-8);}:root .has-global-color-9-color{color:var(--global-color-9);}:root .has-global-color-9-background-color{background-color:var(--global-color-9);}html{font-family:Poppins, sans-serif;font-weight:normal;font-size:16px;line-height:1.5;}h1, h2, h3, h4, h5, h6{font-family:Libre Baskerville, serif;font-weight:bold;}.main-navigation a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items{font-family:Libre Baskerville, serif;font-weight:bold;}.top-bar{background-color:#636363;color:#ffffff;}.top-bar a{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:var(--base-3);}.main-title a,.main-title a:hover{color:var(--contrast);}.site-description{color:var(--contrast-2);}.main-navigation,.main-navigation ul ul{background-color:rgba(255,255,255,0.8);}.main-navigation .main-nav ul li a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items{color:var(--contrast);}.main-navigation .main-nav ul li:not([class*="current-menu-"]):hover > a, .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"]) > a, .main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{color:var(--accent);}button.menu-toggle:hover,button.menu-toggle:focus{color:var(--contrast);}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:var(--accent);}.navigation-search input[type="search"],.navigation-search input[type="search"]:active, .navigation-search input[type="search"]:focus, .main-navigation .main-nav ul li.search-item.active > a, .main-navigation .menu-bar-items .search-item.active > a{color:var(--accent);}.main-navigation ul ul{background-color:var(--base);}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:var(--base-3);}.entry-title a{color:var(--contrast);}.entry-title a:hover{color:var(--contrast-2);}.entry-meta{color:var(--contrast-2);}.sidebar .widget{background-color:var(--base-3);}.footer-widgets{background-color:var(--accent);}.site-info{background-color:var(--accent);}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:var(--contrast);background-color:var(--base-2);border-color:var(--base);}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:var(--contrast);background-color:var(--base-2);border-color:var(--contrast-3);}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#55555e;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#3f4047;}a.generate-back-to-top{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}a.generate-back-to-top:hover,a.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}:root{--gp-search-modal-bg-color:var(--base-3);--gp-search-modal-text-color:var(--contrast);--gp-search-modal-overlay-bg-color:rgba(0,0,0,0.2);}@media (max-width: 1025px){.main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{background:none;color:var(--contrast);}}.nav-below-header .main-navigation .inside-navigation.grid-container, .nav-above-header .main-navigation .inside-navigation.grid-container{padding:0px 20px 0px 20px;}.site-main .wp-block-group__inner-container{padding:40px;}.separate-containers .paging-navigation{padding-top:20px;padding-bottom:20px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-40px;width:calc(100% + 80px);max-width:calc(100% + 80px);}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:20px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:20px;}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:30px;}.site-main .wp-block-group__inner-container{padding:30px;}.inside-top-bar{padding-right:30px;padding-left:30px;}.inside-header{padding-right:30px;padding-left:30px;}.widget-area .widget{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.footer-widgets-container{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.inside-site-info{padding-right:30px;padding-left:30px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-30px;width:calc(100% + 60px);max-width:calc(100% + 60px);}.one-container .site-main .paging-navigation{margin-bottom:20px;}}/* End cached CSS */.is-right-sidebar{width:30%;}.is-left-sidebar{width:30%;}.site-content .content-area{width:100%;}@media (max-width: 1025px){.main-navigation .menu-toggle,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav,.main-navigation:not(.slideout-navigation):not(.toggled) .main-nav > ul,.has-inline-mobile-toggle #site-navigation .inside-navigation > *:not(.navigation-search):not(.main-nav){display:none;}.nav-align-right .inside-navigation,.nav-align-center .inside-navigation{justify-content:space-between;}.has-inline-mobile-toggle .mobile-menu-control-wrapper{display:flex;flex-wrap:wrap;}.has-inline-mobile-toggle .inside-header{flex-direction:row;text-align:left;flex-wrap:wrap;}.has-inline-mobile-toggle .header-widget,.has-inline-mobile-toggle #site-navigation{flex-basis:100%;}.nav-float-left .has-inline-mobile-toggle #site-navigation{order:10;}}
+.dynamic-author-image-rounded{border-radius:100%;}.dynamic-featured-image, .dynamic-author-image{vertical-align:middle;}.one-container.blog .dynamic-content-template:not(:last-child), .one-container.archive .dynamic-content-template:not(:last-child){padding-bottom:0px;}.dynamic-entry-excerpt > p:last-child{margin-bottom:0px;}
+.main-navigation .main-nav ul li a,.menu-toggle,.main-navigation .menu-bar-item > a{transition: line-height 300ms ease}.main-navigation.toggled .main-nav > ul{background-color: rgba(255,255,255,0.8)}.sticky-enabled .gen-sidebar-nav.is_stuck .main-navigation {margin-bottom: 0px;}.sticky-enabled .gen-sidebar-nav.is_stuck {z-index: 500;}.sticky-enabled .main-navigation.is_stuck {box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .2);}.navigation-stick:not(.gen-sidebar-nav) {left: 0;right: 0;width: 100% !important;}.both-sticky-menu .main-navigation:not(#mobile-header).toggled .main-nav > ul,.mobile-sticky-menu .main-navigation:not(#mobile-header).toggled .main-nav > ul,.mobile-header-sticky #mobile-header.toggled .main-nav > ul {position: absolute;left: 0;right: 0;z-index: 999;}@media (max-width: 1025px){#sticky-placeholder{height:0;overflow:hidden;}.has-inline-mobile-toggle #site-navigation.toggled{margin-top:0;}.has-inline-mobile-menu #site-navigation.toggled .main-nav > ul{top:1.5em;}}.nav-float-right .navigation-stick {width: 100% !important;left: 0;}.nav-float-right .navigation-stick .navigation-branding {margin-right: auto;}.main-navigation.has-sticky-branding:not(.grid-container) .inside-navigation:not(.grid-container) .navigation-branding{margin-left: 10px;}.main-navigation.navigation-stick.has-sticky-branding .inside-navigation.grid-container{padding-left:40px;padding-right:40px;}@media (max-width:768px){.main-navigation.navigation-stick.has-sticky-branding .inside-navigation.grid-container{padding-left:0;padding-right:0;}}
+@media (max-width: 1024px),(min-width:1025px){.main-navigation.sticky-navigation-transition .main-nav > ul > li > a,.sticky-navigation-transition .menu-toggle,.main-navigation.sticky-navigation-transition .menu-bar-item > a, .sticky-navigation-transition .navigation-branding .main-title{line-height:55px;}.main-navigation.sticky-navigation-transition .site-logo img, .main-navigation.sticky-navigation-transition .navigation-search input[type="search"], .main-navigation.sticky-navigation-transition .navigation-branding img{height:55px;}}
+</style>
+<link data-minify="1" rel='stylesheet' id='generate-child-css' href='https://les-clapiottes.fr/assets/cache/min/1/assets/themes/clapiottes/style.css?ver=1693914397' media='all' />
+
+<link rel='stylesheet' id='generate-navigation-branding-css' href='https://les-clapiottes.fr/assets/plugins/gp-premium/menu-plus/functions/css/navigation-branding-flex.min.css?ver=2.3.2' media='all' />
+<style id='generate-navigation-branding-inline-css'>
+.main-navigation.has-branding .inside-navigation.grid-container, .main-navigation.has-branding.grid-container .inside-navigation:not(.grid-container){padding:0px 40px 0px 40px;}.main-navigation.has-branding:not(.grid-container) .inside-navigation:not(.grid-container) .navigation-branding{margin-left:10px;}.main-navigation .sticky-navigation-logo, .main-navigation.navigation-stick .site-logo:not(.mobile-header-logo){display:none;}.main-navigation.navigation-stick .sticky-navigation-logo{display:block;}.navigation-branding img, .site-logo.mobile-header-logo img{height:60px;width:auto;}.navigation-branding .main-title{line-height:60px;}@media (max-width: 1025px){.main-navigation.has-branding.nav-align-center .menu-bar-items, .main-navigation.has-sticky-branding.navigation-stick.nav-align-center .menu-bar-items{margin-left:auto;}.navigation-branding{margin-right:auto;margin-left:10px;}.navigation-branding .main-title, .mobile-header-navigation .site-logo{margin-left:10px;}.main-navigation.has-branding .inside-navigation.grid-container{padding:0px;}}
+</style>
+<link rel='stylesheet' id='generate-woocommerce-css' href='https://les-clapiottes.fr/assets/plugins/gp-premium/woocommerce/functions/css/woocommerce.min.css?ver=2.3.2' media='all' />
+<style id='generate-woocommerce-inline-css'>
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button{color:#ffffff;background-color:#55555e;}.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover{color:#ffffff;background-color:#3f4047;}.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover{color:#ffffff;background-color:#1e73be;}.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{color:#ffffff;background-color:#377fbf;}.woocommerce .star-rating span:before, .woocommerce p.stars:hover a::before{color:#ffa200;}.woocommerce span.onsale{background-color:#222222;color:#ffffff;}.woocommerce ul.products li.product .price, .woocommerce div.product p.price{color:#222222;}.woocommerce div.product .woocommerce-tabs ul.tabs li a{color:#222222;}.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover, .woocommerce div.product .woocommerce-tabs ul.tabs li.active a{color:#1e73be;}.woocommerce-message{background-color:#0b9444;color:#ffffff;}div.woocommerce-message a.button, div.woocommerce-message a.button:focus, div.woocommerce-message a.button:hover, div.woocommerce-message a, div.woocommerce-message a:focus, div.woocommerce-message a:hover{color:#ffffff;}.woocommerce-info{background-color:#1e73be;color:#ffffff;}div.woocommerce-info a.button, div.woocommerce-info a.button:focus, div.woocommerce-info a.button:hover, div.woocommerce-info a, div.woocommerce-info a:focus, div.woocommerce-info a:hover{color:#ffffff;}.woocommerce-error{background-color:#e8626d;color:#ffffff;}div.woocommerce-error a.button, div.woocommerce-error a.button:focus, div.woocommerce-error a.button:hover, div.woocommerce-error a, div.woocommerce-error a:focus, div.woocommerce-error a:hover{color:#ffffff;}.woocommerce-product-details__short-description{color:var(--contrast);}#wc-mini-cart{background-color:#ffffff;color:#000000;}#wc-mini-cart a:not(.button), #wc-mini-cart a.remove{color:#000000;}#wc-mini-cart .button{color:#ffffff;}#wc-mini-cart .button:hover, #wc-mini-cart .button:focus, #wc-mini-cart .button:active{color:#ffffff;}.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images{width:50%;}.add-to-cart-panel{background-color:#ffffff;color:#000000;}.add-to-cart-panel a:not(.button){color:#000000;}.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content{background-color:#dddddd;}.woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle{background-color:#666666;}.woocommerce-MyAccount-navigation li.is-active a:after, a.button.wc-forward:after{display:none;}#payment .payment_methods>.wc_payment_method>label:before{font-family:WooCommerce;content:"\e039";}#payment .payment_methods li.wc_payment_method>input[type=radio]:first-child:checked+label:before{content:"\e03c";}.woocommerce-ordering:after{font-family:WooCommerce;content:"\e00f";}.wc-columns-container .products, .woocommerce .related ul.products, .woocommerce .up-sells ul.products{grid-gap:50px;}@media (max-width: 1024px){.woocommerce .wc-columns-container.wc-tablet-columns-2 .products{-ms-grid-columns:(1fr)[2];grid-template-columns:repeat(2, 1fr);}.wc-related-upsell-tablet-columns-2 .related ul.products, .wc-related-upsell-tablet-columns-2 .up-sells ul.products{-ms-grid-columns:(1fr)[2];grid-template-columns:repeat(2, 1fr);}}@media (max-width:768px){.add-to-cart-panel .continue-shopping{background-color:#ffffff;}.woocommerce #content div.product div.images,.woocommerce div.product div.images,.woocommerce-page #content div.product div.images,.woocommerce-page div.product div.images{width:100%;}}@media (max-width: 1025px){nav.toggled .main-nav li.wc-menu-item{display:none !important;}.mobile-bar-items.wc-mobile-cart-items{z-index:1;}}
+</style>
+<link rel='stylesheet' id='generate-woocommerce-mobile-css' href='https://les-clapiottes.fr/assets/plugins/gp-premium/woocommerce/functions/css/woocommerce-mobile.min.css?ver=2.3.2' media='(max-width:768px)' />
+<style id='rocket-lazyload-inline-css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://les-clapiottes.fr/assets/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}.wp-embed-responsive .wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+</style>
+<link rel='stylesheet' id='aca33b9c04-css' href='https://les-clapiottes.fr/assets/plugins/squirrly-seo/view/assets/css/frontend.min.css?ver=12.3.01' media='all' />
+<script src='https://les-clapiottes.fr/wp-includes/js/jquery/jquery.min.js?ver=3.7.0' id='jquery-core-js' defer></script>
+<script src='https://les-clapiottes.fr/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1' id='jquery-migrate-js' defer></script>
+<link rel="https://api.w.org/" href="https://les-clapiottes.fr/wp-json/" /><link rel="alternate" type="application/json" href="https://les-clapiottes.fr/wp-json/wp/v2/pages/38" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://les-clapiottes.fr/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.3.1" />
+<meta name="generator" content="WooCommerce 7.9.0" />
+<link rel='shortlink' href='https://les-clapiottes.fr/' />
+<link rel="alternate" type="application/json+oembed" href="https://les-clapiottes.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fles-clapiottes.fr%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://les-clapiottes.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fles-clapiottes.fr%2F&#038;format=xml" />
+<noscript><style>.wp-grid-builder .wpgb-card.wpgb-card-hidden .wpgb-card-wrapper{opacity:1!important;visibility:visible!important;transform:none!important}.wpgb-facet {opacity:1!important;pointer-events:auto!important}.wpgb-facet *:not(.wpgb-pagination-facet){display:none}</style></noscript>	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<link rel="stylesheet" href="/assets/css/jquery.fancybox.min.css" media="all" />
+<link data-minify="1" rel="stylesheet" href="https://les-clapiottes.fr/assets/cache/min/1/assets/css/lightslider.css?ver=1693914397" media="all" />
+<link data-minify="1" rel="stylesheet" href="https://les-clapiottes.fr/assets/cache/min/1/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css?ver=1693914398" />
+<link data-minify="1" rel="stylesheet" href="https://les-clapiottes.fr/assets/cache/min/1/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css?ver=1693914398" />
+<link data-minify="1" rel="stylesheet" href="https://les-clapiottes.fr/assets/cache/min/1/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css?ver=1693914398" /><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+
+<body class="home page-template-default page page-id-38 wp-custom-logo wp-embed-responsive theme-generatepress post-image-aligned-center sticky-menu-fade sticky-enabled both-sticky-menu woocommerce-no-js no-sidebar nav-float-right separate-containers header-aligned-left dropdown-hover full-width-content" itemtype="https://schema.org/WebPage" itemscope>
+	<a class="screen-reader-text skip-link" href="#content" title="Aller au contenu">Aller au contenu</a><div class="topbar">
+	<div class="tbcontainer">
+		<div class="column">
+		<a href="mailto:contact@les-clapiottes.fr"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 96c-17.7 0-32 14.3-32 32v39.9L227.6 311.3c16.9 12.4 39.9 12.4 56.8 0L480 167.9V128c0-17.7-14.3-32-32-32H64zM32 207.6V384c0 17.7 14.3 32 32 32H448c17.7 0 32-14.3 32-32V207.6L303.3 337.1c-28.2 20.6-66.5 20.6-94.6 0L32 207.6zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg> contact@les-clapiottes.fr</a> | <a href="tel:+33649761726"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M375.8 275.2c-16.4-7-35.4-2.4-46.7 11.4l-33.2 40.6c-46-26.7-84.4-65.1-111.1-111.1L225.3 183c13.8-11.3 18.5-30.3 11.4-46.7l-48-112C181.2 6.7 162.3-3.1 143.6 .9l-112 24C13.2 28.8 0 45.1 0 64v0C0 300.7 183.5 494.5 416 510.9c4.5 .3 9.1 .6 13.7 .8c0 0 0 0 0 0c0 0 0 0 .1 0c6.1 .2 12.1 .4 18.3 .4l0 0c18.9 0 35.2-13.2 39.1-31.6l24-112c4-18.7-5.8-37.6-23.4-45.1l-112-48zM447.7 480C218.1 479.8 32 293.7 32 64v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0c0-3.8 2.6-7 6.3-7.8l112-24c3.7-.8 7.5 1.2 9 4.7l48 112c1.4 3.3 .5 7.1-2.3 9.3l-40.6 33.2c-12.1 9.9-15.3 27.2-7.4 40.8c29.5 50.9 71.9 93.3 122.7 122.7c13.6 7.9 30.9 4.7 40.8-7.4l33.2-40.6c2.3-2.8 6.1-3.7 9.3-2.3l112 48c3.5 1.5 5.5 5.3 4.7 9l-24 112c-.8 3.7-4.1 6.3-7.8 6.3c-.1 0-.2 0-.3 0z"/></svg> 06 49 76 17 26</a>
+		</div>
+		<div class="column">
+			<a href="/mon-compte/"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 480H96V86.2c0-7.5 5.1-13.9 12.4-15.6l166-38.3c.8-.2 1.7-.3 2.5-.3C283 32 288 37 288 43.1V480zm32 0V43.1C320 19.3 300.7 0 276.9 0c-3.3 0-6.5 .4-9.7 1.1l-166 38.3C79.4 44.4 64 63.8 64 86.2V480H16c-8.8 0-16 7.2-16 16s7.2 16 16 16H64 80 96 288h32V480zM232 288c13.2 0 24-14.4 24-32s-10.8-32-24-32s-24 14.4-24 32s10.7 32 24 32zM464 64H352V96H464c8.8 0 16 7.2 16 16V496c0 8.8 7.2 16 16 16h64c8.8 0 16-7.2 16-16s-7.2-16-16-16H512V112c0-26.5-21.5-48-48-48z"/></svg> Connexion</a>		</div>
+	</div>
+</div>		<header class="site-header has-inline-mobile-toggle" id="masthead" aria-label="Site"  itemtype="https://schema.org/WPHeader" itemscope>
+			<div class="inside-header grid-container">
+				<div class="site-logo">
+					<a href="https://les-clapiottes.fr/" rel="home">
+						<img  class="header-image is-logo-image" alt="Les Clapiottes" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" width="0" height="0" data-lazy-src="https://les-clapiottes.fr/assets/uploads/logo-les-clapiottes.svg" /><noscript><img  class="header-image is-logo-image" alt="Les Clapiottes" src="https://les-clapiottes.fr/assets/uploads/logo-les-clapiottes.svg" width="0" height="0" /></noscript>
+					</a>
+				</div>	<nav class="main-navigation mobile-menu-control-wrapper" id="mobile-menu-control-wrapper" aria-label="Mobile Toggle">
+		<div class="menu-bar-items"><span class="menu-bar-item wc-menu-item  ">
+					<a href="https://les-clapiottes.fr/panier/" class="cart-contents shopping-cart has-svg-icon" title="Voir votre panier"><span class="gp-icon shopping-cart">
+				<svg viewBox="0 0 576 512" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+				<path fill="none" d="M0 0h576v512H0z"/>
+				<path d="M181.54 409.6c-29.249 0-52.914 23.04-52.914 51.2 0 28.16 23.665 51.2 52.915 51.2 29.249 0 53.18-23.04 53.18-51.2 0-28.16-23.931-51.2-53.18-51.2zM22 0v51.2h53.18l95.725 194.304-35.897 62.464C115.598 342.272 141.124 384 181.54 384h319.08v-51.2h-319.08l29.249-51.2h198.096c19.943 0 37.492-10.496 46.533-26.368L550.61 89.088c9.838-16.896-2.925-37.888-23.133-37.888H133.944L108.95 0H22zm425.442 409.6c-29.25 0-52.915 23.04-52.915 51.2 0 28.16 23.665 51.2 52.915 51.2 29.249 0 53.18-23.04 53.18-51.2 0-28.16-23.931-51.2-53.18-51.2z"/>
+			</svg>
+			</span><span class="number-of-items no-items">0</span><span class="amount"></span></a>
+				</span></div>		<button data-nav="site-navigation" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" /></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" /></svg></span><span class="screen-reader-text">Menu</span>		</button>
+	</nav>
+			<nav class="has-sticky-branding wc-menu-cart-activated main-navigation has-menu-bar-items sub-menu-right" id="site-navigation" aria-label="Principal"  itemtype="https://schema.org/SiteNavigationElement" itemscope>
+			<div class="inside-navigation grid-container">
+				<div class="navigation-branding"><div class="sticky-navigation-logo">
+					<a href="https://les-clapiottes.fr/" title="Les Clapiottes" rel="home">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="is-logo-image" alt="Les Clapiottes" width="" height="" data-lazy-src="https://les-clapiottes.fr/assets/uploads/logo-les-clapiottes.svg" /><noscript><img src="https://les-clapiottes.fr/assets/uploads/logo-les-clapiottes.svg" class="is-logo-image" alt="Les Clapiottes" width="" height="" /></noscript>
+					</a>
+				</div></div>				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" /></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" /></svg></span><span class="screen-reader-text">Menu</span>				</button>
+				<div id="primary-menu" class="main-nav"><ul id="menu-menu-principal" class=" menu sf-menu"><li id="menu-item-100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-38 current_page_item menu-item-100"><a href="https://les-clapiottes.fr/" aria-current="page"><i class="fa-regular fa-house"></i></a></li>
+<li id="menu-item-104" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-104"><a href="https://les-clapiottes.fr/plateaux-aperitifs-caen/">Plateaux apéritifs</a></li>
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="https://les-clapiottes.fr/brunch-caen/">Brunch</a></li>
+<li id="menu-item-102" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-102"><a href="https://les-clapiottes.fr/commandes-speciales/">Traiteur</a></li>
+<li id="menu-item-103" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103"><a href="https://les-clapiottes.fr/contact/">Contact</a></li>
+</ul></div><div class="menu-bar-items"><span class="menu-bar-item wc-menu-item  ">
+					<a href="https://les-clapiottes.fr/panier/" class="cart-contents shopping-cart has-svg-icon" title="Voir votre panier"><span class="gp-icon shopping-cart">
+				<svg viewBox="0 0 576 512" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+				<path fill="none" d="M0 0h576v512H0z"/>
+				<path d="M181.54 409.6c-29.249 0-52.914 23.04-52.914 51.2 0 28.16 23.665 51.2 52.915 51.2 29.249 0 53.18-23.04 53.18-51.2 0-28.16-23.931-51.2-53.18-51.2zM22 0v51.2h53.18l95.725 194.304-35.897 62.464C115.598 342.272 141.124 384 181.54 384h319.08v-51.2h-319.08l29.249-51.2h198.096c19.943 0 37.492-10.496 46.533-26.368L550.61 89.088c9.838-16.896-2.925-37.888-23.133-37.888H133.944L108.95 0H22zm425.442 409.6c-29.25 0-52.915 23.04-52.915 51.2 0 28.16 23.665 51.2 52.915 51.2 29.249 0 53.18-23.04 53.18-51.2 0-28.16-23.931-51.2-53.18-51.2z"/>
+			</svg>
+			</span><span class="number-of-items no-items">0</span><span class="amount"></span></a>
+				</span></div>			</div>
+		</nav>
+					</div>
+		</header>
+		
+	<div class="site grid-container container hfeed" id="page">
+				<div class="site-content" id="content">
+			
+	<div class="content-area" id="primary">
+		<main class="site-main" id="main">
+			
+<article id="post-38" class="post-38 page type-page status-publish" itemtype="https://schema.org/CreativeWork" itemscope>
+	<div class="inside-article">
+		
+		<div class="entry-content" itemprop="text">
+			<section id="herobox">
+<div class="overlay">
+<div class="row">
+<h1>Plateau apéritif livré à domicile à Caen !</h1>
+<p class="h1 withb">Plateaux apéritifs &amp; Brunch à Caen</p>
+<a class="btn green smooth-scroll" href="#order">Commander</a>
+</div>
+</div>
+</section>
+<div class="row reassurance">
+<div class="col col1">
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"> <path d="M235.3 4.7L224 16C235.3 4.7 235.3 4.7 235.3 4.7l0 0 0 0 .1 .1 .2 .2 .4 .5c.4 .4 .8 .9 1.4 1.5c1.1 1.3 2.6 3.1 4.4 5.4c3.5 4.7 8 11.5 12.5 20.4c6 12 11.9 27.8 15.1 47.4c52.9 1.7 102.9 13.6 145.6 35.3c13.2 6.7 20.1 21.6 16.6 36s-16.3 24.5-31.1 24.5h-4.8c6.7 11.5 5.5 26.1-3.1 36.5c-9.1 10.9-24.2 14.5-37.2 8.9L256 178.8l-99.4 42.6c-13 5.6-28.2 1.9-37.2-8.9c-8.7-10.5-9.8-25.2-2.9-36.8l-.2 0c-13.3 2-26.9-4.5-33.4-17.1c-8-15.8-1.7-35 14-43l0 0 .8-.4 0 0c41-20.6 88.6-32.3 139.1-34.6c-2.8-13.8-7.1-24.9-11.3-33.3c-3.5-7-7-12.2-9.5-15.6c-1.2-1.7-2.2-2.8-2.9-3.6c-.3-.4-.5-.6-.6-.7l-.1-.1c-6.2-6.3-6.1-16.3 .1-22.5c6.2-6.2 16.4-6.2 22.6 0zM240 112.3c-47.2 2-90.9 12.7-127.7 31.3l0 0-.8 .4 0 0 0 0c1.2-.3 2.4-.4 3.6-.4l31.3 .2c5.9 0 11.3 3.3 14 8.5s2.4 11.5-.8 16.4L144 192l105.7-45.3c4-1.7 8.6-1.7 12.6 0L368 192l-15.4-23.1c-3.3-4.9-3.6-11.2-.8-16.4s8.2-8.5 14.1-8.5h34.6c-37-18.8-81-29.7-128.5-31.7c-.2 8.7-7.3 15.7-16 15.7s-15.8-7-16-15.7zM73.4 195.4C47.3 223.5 32 259.8 32 304c0 55 23.6 97.8 62.5 127.7C134.1 462.2 190.8 480 256 480s121.9-17.8 161.5-48.3C456.4 401.8 480 359 480 304c0-44.2-15.3-80.5-41.4-108.6c8.7-6.4 15.7-15 20.3-25.1C492.2 204.5 512 249.6 512 304c0 130.9-114.6 208-256 208S0 434.9 0 304c0-54.4 19.8-99.6 53.1-133.7c.4 .9 .8 1.8 1.3 2.7c4.7 9.2 11.2 16.7 18.9 22.4z" /> </svg>
+<span class="title">Des produits frais</span>Pas de trucs qui viennent de l’autre bout de la planète
+</div>
+<div class="col col2">
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><path d="M163.9 28.9C191.7 .7 235.8-.8 265.3 24.3c5.8 4.9 11 10.4 16.3 15.9c2.1 2.2 4.2 4.5 6.4 6.6c2.1-2.2 4.3-4.4 6.4-6.6c5.2-5.5 10.5-11 16.3-15.9C340.2-.8 384.3 .7 412.1 28.9c29.4 29.8 29.4 78.2 0 108L310.5 240.1c-6.2 6.3-14.3 9.4-22.5 9.4s-16.3-3.1-22.5-9.4L163.9 136.9c-29.4-29.8-29.4-78.2 0-108zm83.6 22.5c-16.8-17.1-44-17.1-60.8 0c-17.1 17.4-17.1 45.7 0 63.1L288 217.3 389.3 114.4c17.1-17.4 17.1-45.7 0-63.1c-16.8-17.1-44-17.1-60.8 0L299.4 80.9c-6.3 6.4-16.5 6.4-22.8 0L247.5 51.4zM151 317.4c13.1-8.8 28.6-13.4 44.4-13.4H344c30.9 0 56 25.1 56 56c0 8.6-1.9 16.7-5.4 24h5.6l94.7-56.4c8.3-4.9 17.8-7.6 27.5-7.6h1.3c28.9 0 52.3 23.4 52.3 52.3c0 17.7-9 34.2-23.8 43.8L432.6 493.9c-18.2 11.8-39.4 18.1-61 18.1H16c-8.8 0-16-7.2-16-16s7.2-16 16-16H371.5c15.5 0 30.6-4.5 43.6-12.9l119.6-77.8c5.8-3.7 9.2-10.2 9.2-17c0-11.2-9.1-20.3-20.3-20.3h-1.3c-3.9 0-7.7 1.1-11.1 3l-98.5 58.7c-2.5 1.5-5.3 2.3-8.2 2.3H344 320 256c-8.8 0-16-7.2-16-16s7.2-16 16-16h64 24c13.3 0 24-10.7 24-24s-10.7-24-24-24H195.4c-9.5 0-18.7 2.8-26.6 8.1L88.9 397.3c-2.6 1.8-5.7 2.7-8.9 2.7H16c-8.8 0-16-7.2-16-16s7.2-16 16-16H75.2L151 317.4z" /></svg>
+<span class="title">Fait maison</span>Tout est fait maison, avec amour, et préparé à deux pas de chez vous
+</div>
+<div class="col col3">
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M112 0c8.8 0 16 7.2 16 16V64H320V16c0-8.8 7.2-16 16-16s16 7.2 16 16V64h32c35.3 0 64 28.7 64 64v32 32V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V192 160 128C0 92.7 28.7 64 64 64H96V16c0-8.8 7.2-16 16-16zM416 192H312v72H416V192zm0 104H312v80H416V296zm0 112H312v72h72c17.7 0 32-14.3 32-32V408zM280 376V296H168v80H280zM168 408v72H280V408H168zm-32-32V296H32v80H136zM32 408v40c0 17.7 14.3 32 32 32h72V408H32zm0-144H136V192H32v72zm136 0H280V192H168v72zM384 96H64c-17.7 0-32 14.3-32 32v32H416V128c0-17.7-14.3-32-32-32z" /></svg>
+<span class="title">Produit de saison</span>Nos produits respectent le rythme des sasisons, donc pas de tomate en
+hiver !
+</div>
+<div class="col col4">
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M127.7 106.8L103.4 176H408.6l-24.2-69.2c-5.6-16-20.8-26.8-37.8-26.8H165.4c-17 0-32.1 10.7-37.8 26.8zm-79.6 82L82.3 90.9C94.7 55.6 128 32 165.4 32H346.6c37.4 0 70.7 23.6 83.1 58.9l34.3 97.9C492.6 205.4 512 236.4 512 272v80 48 56c0 13.3-10.7 24-24 24s-24-10.7-24-24V400H48v56c0 13.3-10.7 24-24 24s-24-10.7-24-24V400 352 272c0-35.6 19.3-66.6 48.1-83.2zM416 224H96c-26.5 0-48 21.5-48 48v80H464V272c0-26.5-21.5-48-48-48zM112 256a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm256 32a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+</svg>
+<span class="title">Livraison à Caen</span>Vous êtes livrés à domicile à Caen, ou bien dans un point relais
+
+</div>
+</div>
+<section class="presentation">
+<div class="wraper">
+<div class="column col1"><span class="smallmaj">A propos</span>
+<h2 class="withhalfb singleline">Les Clapiottes, c&rsquo;est quoi ?</h2>
+<p class="greenborder">Les Clapiottes, c’est Charlotte ! Après 7 ans aux desserts dans la
+restauration (La Casinière), elle revient en cuisine sur un autre projet pour épater vos papilles !</p>
+
+<div class="dualcol">
+<div class="column col1"><i class="fa-light fa-beer-mug-empty"></i>
+<span class="black">Des plats conçus pour l&rsquo;apéritif !</span></div>
+<div class="column col2"><i class="fa-light fa-heart"></i>
+<span class="black">Tout est cuisiné avec amour !</span></div>
+</div>
+<ul>
+ 	<li class="greencheck"><i class="fa-light fa-circle-check"></i> Toujours cet amour du
+goût et du travail bien fait,</li>
+ 	<li class="greencheck"><i class="fa-light fa-circle-check"></i> Toujours des produits
+frais, locaux et de saison,</li>
+ 	<li class="greencheck"><i class="fa-light fa-circle-check"></i> Des nouveautés avec une
+carte spéciale pour l’apéritif !</li>
+</ul>
+<a class="btn green" href="#order">Commander</a>
+
+</div>
+<div class="column col2">
+<div class="imgwraper"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Charlotte de la Casinière" data-lazy-src="/assets/uploads/charlotte-de-la-casiniere.jpg" /><noscript><img decoding="async" src="/assets/uploads/charlotte-de-la-casiniere.jpg" alt="Charlotte de la Casinière" /></noscript>
+<div class="pink-shadow"></div>
+</div>
+</div>
+</div>
+</section><section class="homegallery"><span class="ribbon top">Nos créations en image</span>
+<span class="ribbon bottom">Tout est fait maison</span>
+<ul><li class="portfoliome" data-fancybox="clapiottesportfolio" data-src="https://les-clapiottes.fr/assets/uploads/focaccia-1.jpg" data-width="1280" data-height="720"><img decoding="async" class="pfthumb lazy-loaded" alt="Focaccia" src="https://les-clapiottes.fr/assets/uploads/focaccia-1-640x360.jpg" data-lazy-type="image" data-src="https://les-clapiottes.fr/assets/uploads/focaccia-1-640x360.jpg" /></li><li class="portfoliome" data-fancybox="clapiottesportfolio" data-src="https://les-clapiottes.fr/assets/uploads/gressins-aperitif.jpg" data-width="1280" data-height="720"><img decoding="async" class="pfthumb lazy-loaded" alt="Gressins apéritif" src="https://les-clapiottes.fr/assets/uploads/gressins-aperitif-640x360.jpg" data-lazy-type="image" data-src="https://les-clapiottes.fr/assets/uploads/gressins-aperitif-640x360.jpg" /></li><li class="portfoliome" data-fancybox="clapiottesportfolio" data-src="https://les-clapiottes.fr/assets/uploads/box-apero.jpg" data-width="1280" data-height="720"><img decoding="async" class="pfthumb lazy-loaded" alt="IMG-ALT" src="https://les-clapiottes.fr/assets/uploads/box-apero-640x360.jpg" data-lazy-type="image" data-src="https://les-clapiottes.fr/assets/uploads/box-apero-640x360.jpg" /></li><li class="portfoliome" data-fancybox="clapiottesportfolio" data-src="https://les-clapiottes.fr/assets/uploads/pavlova-fruits.jpg" data-width="1280" data-height="720"><img decoding="async" class="pfthumb lazy-loaded" alt="Pavlova aux fruits rouges" src="https://les-clapiottes.fr/assets/uploads/pavlova-fruits-640x360.jpg" data-lazy-type="image" data-src="https://les-clapiottes.fr/assets/uploads/pavlova-fruits-640x360.jpg" /></li><li class="portfoliome" data-fancybox="clapiottesportfolio" data-src="https://les-clapiottes.fr/assets/uploads/finaciers.jpg" data-width="1280" data-height="720"><img decoding="async" class="pfthumb lazy-loaded" alt="Financiers" src="https://les-clapiottes.fr/assets/uploads/finaciers-640x360.jpg" data-lazy-type="image" data-src="https://les-clapiottes.fr/assets/uploads/finaciers-640x360.jpg" /></li><li class="portfoliome" data-fancybox="clapiottesportfolio" data-src="https://les-clapiottes.fr/assets/uploads/aperitif.jpg" data-width="1280" data-height="720"><img decoding="async" class="pfthumb lazy-loaded" alt="Aperitif" src="https://les-clapiottes.fr/assets/uploads/aperitif-640x360.jpg" data-lazy-type="image" data-src="https://les-clapiottes.fr/assets/uploads/aperitif-640x360.jpg" /></li></ul></section><section id="order">
+<h2 class="section-title withb">Commander</h2>
+<ul class="tabsnav">
+ 	<li data-tab="tabcontent1">Plateau apéro</li>
+ 	<li data-tab="tabcontent2">Brunch</li>
+ 	<li data-tab="tabcontent3">Commande spéciale</li>
+</ul>
+<div class="tabcontainer">
+<div id="tabcontent1">
+					
+					<!--<div class="fadebox">
+						<div class="inside_el">
+							<div class="img-container">
+								<img
+								 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+									alt="Plateau apéro" data-lazy-src="/assets/uploads/plateau-surprise.jpg" /><noscript><img
+									src="/assets/uploads/plateau-surprise.jpg"
+									alt="Plateau apéro" /></noscript>
+							</div>
+							<div class="description">
+								<h3>Plateau Surprise</h3>
+								<p>
+									Un plateau composé selon l’inspiration et les produits du
+									moment. Si vous ne savez pas quoi prendre, c’est le plateau
+									qui vous supplie de ne pas le manger (“pas nous, pas nous !”).
+								</p>
+								<button class="btn pink appear_btn">Composition</button>
+							</div>
+
+							<div class="cartupdater" data-product-id="208" data-product-name="Plateau surprise">
+								<div class="inputcontainer">
+									<span class="howmany">Pour combien de personnes ?</span>
+									<div class="inputel">
+										<input
+											type="number"
+											name="quantity"
+											id="quantity-208"
+											value="2"
+											min="2"
+											max="30"
+											class="qtity" />
+									</div>
+								</div>
+								<div class="pricecontainer">
+									Prix <span class="dynamicprice" data-unit-price="12">24.00</span> €
+								</div>
+								<a href="?add-to-cart=208" data-quantity="2" class="button product_type_simple add_to_cart_button ajax_add_to_cart btn green" data-product_id="208" data-product_sku="" aria-label="Ajouter ce produit à votre panier" rel="nofollow">Au panier !</a>
+							</div>
+						</div>
+						<div class="appear_el">
+							<div class="inside_el">
+								<div class="description">
+									<h4 class="withhalfb">Composition du plateau</h4>
+									<ul>
+										<li>Crackers au parmesan et au basilic</li>
+										<li>Chutney de chou-fleur au curry</li>
+										<li>Brochettes de poulet sauce aigre-douce</li>
+										<li>Assortiment de légumes de saison</li>
+										<li>Clapiottes du marché printanier</li>
+										<li>Mille-feuille au basilic thaï</li>
+										<li>Purée de carottes au poivre rouge</li>
+										<li>Brick aneth-gorgonzola</li>
+										<li>Tomates confites à la mandarine</li>
+										<li>Pain viking et pain de mie maison</li>
+									</ul>
+									<p class="allerg">
+										Allergènes : lorem ipsum dolor sit amet. Lorem ipsum dolor
+										sit amet.
+									</p>
+								</div>
+								<div class="img-container">
+									<img
+									 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+										alt="Plateau apéro" data-lazy-src="/assets/uploads/plateau-surprise.jpg" /><noscript><img
+										src="/assets/uploads/plateau-surprise.jpg"
+										alt="Plateau apéro" /></noscript>
+								</div>
+							</div>
+							<button class="close_appear_el">
+								<i class="fa-regular fa-circle-xmark"></i>
+							</button>
+						</div>
+					</div>-->
+
+					<div class="fadebox">
+						<div class="inside_el">
+							<div class="img-container">
+								<img
+								 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+									alt="Plateau apéro" data-lazy-src="/assets/uploads/plateau-marche-1.jpg" /><noscript><img
+									src="/assets/uploads/plateau-marche-1.jpg"
+									alt="Plateau apéro" /></noscript>
+							</div>
+							<div class="description">
+								<h3>Plateau du marché</h3>
+								<p>
+									Les Clapiottes du marché se retrouvent sur ce plateau qui
+									contient de quoi régaler les petits comme les grands. C’est le
+									plateau classique par excellence, idéal pour découvrir les
+									Clapiottes !
+								</p>
+								<button class="btn pink appear_btn">Composition</button>
+							</div>
+							
+							
+							
+							<div class="cartupdater" data-product-id="207" data-product-name="Plateau du marché">
+								<div class="inputcontainer">
+									<span class="howmany">Pour combien de personnes ?</span>
+									<div class="inputel">
+										<input
+											type="number"
+											name="quantity"
+											id="quantity-207"
+											value="2"
+											min="2"
+											max="30"
+											class="qtity" />
+									</div>
+									<!-- Ajout du date picker ici -->
+
+								</div>
+								<div class="inputcontainer">
+								<span class="whenorder">Pour combien de personnes ?</span>
+									<div class="inputel">
+										<input
+											type="text"
+											name="delivery_date"
+											id="delivery_date-207"
+											class="clapi_datepicker" />
+									</div>
+								</div>
+								<div class="pricecontainer">
+									Prix <span class="dynamicprice" data-unit-price="12">24.00</span> €
+								</div>
+								<a href="?add-to-cart=207" data-quantity="2" class="button product_type_simple add_to_cart_button ajax_add_to_cart btn green" data-product_id="207" data-product_sku="" aria-label="Ajouter ce produit à votre panier" rel="nofollow">Au panier !</a>
+							</div>
+							
+							
+						</div>
+						<div class="appear_el">
+							<div class="inside_el">
+								<div class="description">
+									<h4 class="withhalfb">Composition du plateau</h4>
+									<ul>
+										<li>Rillettes de sardines</li>
+										<li>Houmous à l&rsquo;ail confit</li>
+										<li>Crème de courgettes à la menthe</li>
+										<li>Houmous de petits pois</li>
+										<li>crackers et gressins maison</li>
+										<li>Fromages et charcuterie</li>
+										<li>Fruits et crudités de saison</li>
+										<li>Cake chèvre épinards</li>
+										<li>Tomates confites et fruits secs</li>
+										<li>Pain au levain</li>
+									</ul>
+									<p class="allerg">
+										Allergènes : lorem ipsum dolor sit amet. Lorem ipsum dolor
+										sit amet.
+									</p>
+								</div>
+								<div class="img-container">
+									<img
+									 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+										alt="Plateau apéro" data-lazy-src="/assets/uploads/plateau-marche-2.jpg" /><noscript><img
+										src="/assets/uploads/plateau-marche-2.jpg"
+										alt="Plateau apéro" /></noscript>
+								</div>
+							</div>
+							<button class="close_appear_el">
+								<i class="fa-regular fa-circle-xmark"></i>
+							</button>
+						</div>
+					</div>
+
+					<div class="fadebox">
+						<div class="inside_el">
+							<div class="img-container">
+								<img
+								 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+									alt="Plateau apéro" data-lazy-src="/assets/uploads/plateau-vege-1.jpg" /><noscript><img
+									src="/assets/uploads/plateau-vege-1.jpg"
+									alt="Plateau apéro" /></noscript>
+							</div>
+							<div class="description">
+								<h3>Plateau végétarien</h3>
+								<p>
+									Des Clapiottes sans viandes et sans poisson pour les amis des
+									animaux, mais pleines de bonnes choses et de saveures
+									fraîches, locales, pour ceux qui veulent un plateau apéro tout
+									en couleur !
+								</p>
+								<button class="btn pink appear_btn">Composition</button>
+							</div>
+
+							<div class="cartupdater" data-product-id="209" data-product-name="Plateau végétarien">
+								<div class="inputcontainer">
+									<span class="howmany">Pour combien de personnes ?</span>
+									<div class="inputel">
+										<input
+											type="number"
+											name="quantity"
+											id="quantity-209"
+											value="2"
+											min="2"
+											max="30"
+											class="qtity" />
+									</div>
+								</div>
+								<div class="pricecontainer">
+									Prix <span class="dynamicprice" data-unit-price="12">24.00</span> €
+								</div>
+								<a href="?add-to-cart=209" data-quantity="2" class="button product_type_simple add_to_cart_button ajax_add_to_cart btn green" data-product_id="209" data-product_sku="" aria-label="Ajouter ce produit à votre panier" rel="nofollow">Au panier !</a>
+							</div>
+						</div>
+						<div class="appear_el">
+							<div class="inside_el">
+								<div class="description">
+									<h4 class="withhalfb">Composition du plateau</h4>
+									<ul>
+										<li>Houmous de curcuma</li>
+										<li>Crème de betteraves aux noisettes et gingembre</li>
+										<li>Tzatziki concombre kiwis curry</li>
+										<li>Crémeux de cajou aillé </li>
+										<li>Fromages</li>
+										<li>Fruits et crudités de saison</li>
+										<li>Falafels verts</li>
+										<li>Tomates confites et fruits secs</li>
+										<li>Crackers et gressins maison</li>
+										<li>Pain au levain</li>
+									</ul>
+									<p class="allerg">
+										Allergènes : lorem ipsum dolor sit amet. Lorem ipsum dolor
+										sit amet.
+									</p>
+								</div>
+								<div class="img-container">
+									<img
+									 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+										alt="Plateau apéro" data-lazy-src="/assets/uploads/plateau-vege-2.jpg" /><noscript><img
+										src="/assets/uploads/plateau-vege-2.jpg"
+										alt="Plateau apéro" /></noscript>
+								</div>
+							</div>
+							<button class="close_appear_el">
+								<i class="fa-regular fa-circle-xmark"></i>
+							</button>
+						</div>
+					</div>
+
+					<!--<div class="fadebox">
+						<div class="inside_el">
+							<div class="img-container">
+								<img
+								 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+									alt="Plateau apéro" data-lazy-src="/assets/uploads/plateau-de-fete.jpg" /><noscript><img
+									src="/assets/uploads/plateau-de-fete.jpg"
+									alt="Plateau apéro" /></noscript>
+							</div>
+							<div class="description">
+								<h3>Plateau des fêtes</h3>
+								<p>
+									Le plus beau des plateaux pour la plus belle des occasions :
+									la vôtre ! Retrouvez ici des Clapiottes festives pour épater
+									vos convives et célébrer comme il se doit cette belle occasion
+									qui vous réunit !
+								</p>
+								<button class="btn pink appear_btn">Composition</button>
+							</div>
+
+							<div class="cartupdater" data-product-id="210" data-product-name="Plateau de fêtes">
+								<div class="inputcontainer">
+									<span class="howmany">Pour combien de personnes ?</span>
+									<div class="inputel">
+										<input
+											type="number"
+											name="quantity"
+											id="quantity-210"
+											value="2"
+											min="2"
+											max="30"
+											class="qtity" />
+									</div>
+								</div>
+								<div class="pricecontainer">
+									Prix <span class="dynamicprice" data-unit-price="15">30.00</span> €
+								</div>
+								<a href="?add-to-cart=210" data-quantity="2" class="button product_type_simple add_to_cart_button ajax_add_to_cart btn green" data-product_id="210" data-product_sku="" aria-label="Ajouter ce produit à votre panier" rel="nofollow">Au panier !</a>
+							</div>
+						</div>
+						<div class="appear_el">
+							<div class="inside_el">
+								<div class="description">
+									<h4 class="withhalfb">Composition du plateau</h4>
+									<ul>
+										<li>Crackers au parmesan et au basilic</li>
+										<li>Chutney de chou-fleur au curry</li>
+										<li>Brochettes de poulet sauce aigre-douce</li>
+										<li>Assortiment de légumes de saison</li>
+										<li>Clapiottes du marché printanier</li>
+										<li>Mille-feuille au basilic thaï</li>
+										<li>Purée de carottes au poivre rouge</li>
+										<li>Brick aneth-gorgonzola</li>
+										<li>Tomates confites à la mandarine</li>
+										<li>Pain viking et pain de mie maison</li>
+									</ul>
+									<p class="allerg">
+										Allergènes : lorem ipsum dolor sit amet. Lorem ipsum dolor
+										sit amet.
+									</p>
+								</div>
+								<div class="img-container">
+									<img
+									 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+										alt="Plateau apéro" data-lazy-src="/assets/uploads/plateau-surprise.jpg" /><noscript><img
+										src="/assets/uploads/plateau-surprise.jpg"
+										alt="Plateau apéro" /></noscript>
+								</div>
+							</div>
+							<button class="close_appear_el">
+								<i class="fa-regular fa-circle-xmark"></i>
+							</button>
+						</div>
+					</div>-->
+				</div>
+<div id="tabcontent2" style="display: none;">
+<div class="fadebox">
+<div class="inside_el">
+<div class="img-container"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Plateau Brunch" data-lazy-src="/assets/uploads/brunch-2.jpg" /><noscript><img decoding="async" src="/assets/uploads/brunch-2.jpg" alt="Plateau Brunch" /></noscript></div>
+<div class="description">
+<h3>Le Brunch</h3>
+Un Brunch copieux, composé de petits plats faits maison,
+parfait pour attaquer le dimanche du bon pied (celui qui est
+levé et qui profite).
+
+<button class="btn pink appear_btn">Composition</button>
+
+</div>
+<div class="cartupdater" data-product-id="211" data-product-name="Brunch">
+<div class="inputcontainer"><span class="howmany">Pour combien de personnes ?</span>
+<div class="inputel"><input id="quantity-211" class="qtity" max="30" min="2" name="quantity" type="number" value="2" /></div>
+</div>
+<div class="pricecontainer">Prix <span class="dynamicprice" data-unit-price="17">34.00</span> €</div>
+<a class="button product_type_simple add_to_cart_button ajax_add_to_cart btn green" href="?add-to-cart=211" rel="nofollow" data-quantity="2" data-product_id="211" data-product_sku="" aria-label="Ajouter ce produit à votre panier">Au panier !</a>
+
+</div>
+</div>
+<div class="appear_el">
+<div class="inside_el">
+<div class="description">
+<h4 class="withhalfb">Composition du Brunch</h4>
+<ul>
+ 	<li>Crackers au parmesan et au basilic</li>
+ 	<li>Chutney de chou-fleur au curry</li>
+ 	<li>Brochettes de poulet sauce aigre-douce</li>
+ 	<li>Assortiment de légumes de saison</li>
+ 	<li>Clapiottes du marché printanier</li>
+ 	<li>Mille-feuille au basilic thaï</li>
+ 	<li>Purée de carottes au poivre rouge</li>
+ 	<li>Brick aneth-gorgonzola</li>
+ 	<li>Tomates confites à la mandarine</li>
+ 	<li>Pain viking et pain de mie maison</li>
+</ul>
+<p class="allerg">Allergènes : lorem ipsum dolor sit amet. Lorem ipsum dolor
+sit amet.</p>
+
+</div>
+<div class="img-container"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Brunch" data-lazy-src="/assets/uploads/brunch-2.jpg" /><noscript><img decoding="async" src="/assets/uploads/brunch-2.jpg" alt="Brunch" /></noscript></div>
+</div>
+<button class="close_appear_el">
+<i class="fa-regular fa-circle-xmark"></i>
+</button>
+
+</div>
+</div>
+</div>
+<div id="tabcontent3" style="display: none;">
+<div class="form-n-galery">
+<div class="row">
+<div class="col1"><!--GALERIE AVEC IMAGE 1 QUI CHANGE-->
+<div>
+<ul id="clapCarousel">
+            <li class="f-carousel__slide" data-thumb-src="/assets/uploads/galerie-clapio-1.jpg">
+              <img alt="Citron myrtille Cake" data-lazy-src="/assets/uploads/galerie-clapio-1.jpg" />
+            </li>
+            <li class="f-carousel__slide" data-thumb-src="/assets/uploads/galerie-clapio-2.jpg">
+              <img alt="Carrot Cake" data-lazy-src="/assets/uploads/galerie-clapio-2.jpg" />
+            </li>
+            <li class="f-carousel__slide" data-thumb-src="/assets/uploads/galerie-clapio-3.jpg">
+              <img alt="Buche patissière" data-lazy-src="/assets/uploads/galerie-clapio-3.jpg" />
+            </li>
+            <li class="f-carousel__slide" data-thumb-src="/assets/uploads/galerie-clapio-4.jpg">
+              <img alt="Assortiment de clapiottes" data-lazy-src="/assets/uploads/galerie-clapio-4.jpg" />
+            </li>
+            <li class="f-carousel__slide" data-thumb-src="/assets/uploads/galerie-clapio-5.jpg">
+              <img alt="Pavlova Meringue aux fruits rouges" data-lazy-src="/assets/uploads/galerie-clapio-5.jpg" />
+            </li>
+          </ul>
+</div>
+</div>
+<div class="col2">
+<h2>Un besoin particulier ?</h2>
+<p>Vous avez besoin d’un traiteur ? Vous souhaiteriez commander
+un gâteau pour un anniversaire ? Les Clapiottes, c&rsquo;est aussi un service de traiteur qui se déplace chez vous pour tous vos évènements ! Laissez-nous un message via notre formulaire de contact et nous revenons vers vous rapidement !</p>
+<a href="/contact/" class="btn green">Nous contacter</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+			<div class="popup-overlay">
+			    <div class="popupcentercontainer">
+				<div class="clapipopup">
+				<img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="is-logo-image" alt="Les Clapiottes" data-lazy-src="/assets/uploads/logo-les-clapiottes.svg"><noscript><img decoding="async" src="/assets/uploads/logo-les-clapiottes.svg" class="is-logo-image" alt="Les Clapiottes"></noscript>
+					<p><i class="fa-light fa-face-party"></i> Votre produit <span class="added-product-name"></span> a bien été ajouté au panier <i class="fa-light fa-party-horn"></i></p>
+					<div class="btn-container">
+					<a href="/panier/" class="btn green">Voir le panier</a><button class="btn pink close-popup">Continuer mes achats</button>
+					</div>
+					<span class="close-popup topright"><i class="fa-regular fa-circle-xmark"></i></span>
+				</div></div>
+			</div>
+<p class="final-call">Vous avez besoin de plus d’informations pour commander ?<br>
+Contactez-nous !</p>
+
+<div class="btn-container"><a class="btn sktn mantis" href="tel:+33-7-1234-5678"><i class="fa-regular fa-mobile-notch"></i> 07.12.34.56.78
+</a><a class="btn sktn pink" href="/contact/"><i class="fa-regular fa-envelope"></i> Par mail</a></div>
+</section><section class="blogsection">
+<h2 class="section-title withb white">Les recettes</h2>
+<p class="intro">Charlotte partage parfois son savoir-faire sur son blog. Vidéo, article
+complet, c’est comme les Clapiottes : selon l’inspiration du moment&#8230;</p>
+<p style="text-align: center;"><!-- Gridbuilder ᵂᴾ Plugin (https://wpgridbuilder.com) -->
+<div class="wp-grid-builder wpgb-grid-2 blogpost" data-options="{&quot;id&quot;:2,&quot;type&quot;:&quot;masonry&quot;,&quot;source&quot;:&quot;post_type&quot;,&quot;loader&quot;:0,&quot;layout&quot;:&quot;vertical&quot;,&quot;reveal&quot;:0,&quot;isMainQuery&quot;:0,&quot;lazyLoad&quot;:0,&quot;cardSizes&quot;:{&quot;9999&quot;:{&quot;columns&quot;:3,&quot;height&quot;:240,&quot;gutter&quot;:30,&quot;ratio&quot;:&quot;1.33333&quot;},&quot;1200&quot;:{&quot;columns&quot;:3,&quot;height&quot;:240,&quot;gutter&quot;:30,&quot;ratio&quot;:&quot;1.33333&quot;},&quot;992&quot;:{&quot;columns&quot;:3,&quot;height&quot;:220,&quot;gutter&quot;:30,&quot;ratio&quot;:&quot;1.33333&quot;},&quot;768&quot;:{&quot;columns&quot;:1,&quot;height&quot;:220,&quot;gutter&quot;:30,&quot;ratio&quot;:&quot;1.33333&quot;},&quot;576&quot;:{&quot;columns&quot;:1,&quot;height&quot;:200,&quot;gutter&quot;:30,&quot;ratio&quot;:&quot;1.33333&quot;},&quot;320&quot;:{&quot;columns&quot;:1,&quot;height&quot;:200,&quot;gutter&quot;:30,&quot;ratio&quot;:&quot;1.33333&quot;}},&quot;fitRows&quot;:0,&quot;equalRows&quot;:0,&quot;equalColumns&quot;:0,&quot;fillLastRow&quot;:0,&quot;centerLastRow&quot;:0,&quot;horizontalOrder&quot;:0,&quot;fullWidth&quot;:0,&quot;transitionDelay&quot;:100,&quot;gallerySlideshow&quot;:0,&quot;rowsNumber&quot;:1,&quot;slideAlign&quot;:&quot;left&quot;,&quot;groupCells&quot;:1,&quot;draggable&quot;:1,&quot;initialIndex&quot;:0,&quot;contain&quot;:0,&quot;freeScroll&quot;:0,&quot;freeFriction&quot;:&quot;0.075&quot;,&quot;friction&quot;:&quot;0.285&quot;,&quot;attraction&quot;:&quot;0.025&quot;,&quot;autoPlay&quot;:0,&quot;pageDotAriaLabel&quot;:&quot;Point de page %d&quot;,&quot;isPreview&quot;:false,&quot;isGutenberg&quot;:false,&quot;rightToLeft&quot;:false}"><div class="wpgb-svg-icons" hidden>
+	<svg viewBox="0 0 120 24" width="0" height="0">
+	<defs>
+        <polygon id="wpgb-star-svg" points="12 2.5 15.1 8.8 22 9.8 17 14.6 18.2 21.5 12 18.3 5.8 21.5 7 14.6 2 9.8 8.9 8.8"></polygon>
+    </defs>
+    <symbol id="wpgb-rating-stars-svg">
+        <use xlink:href="#wpgb-star-svg"></use>
+        <use xlink:href="#wpgb-star-svg" x="24"></use>
+        <use xlink:href="#wpgb-star-svg" x="48"></use>
+        <use xlink:href="#wpgb-star-svg" x="72"></use>
+        <use xlink:href="#wpgb-star-svg" x="96"></use>
+    </symbol>
+</svg>
+</div>
+<div class="wpgb-wrapper">
+	<div class="wpgb-main">
+	<div class="wpgb-layout">
+	<div class="wpgb-viewport">
+		<div class="wpgb-masonry">
+			<article class="wpgb-card wpgb-card-22 wpgb-post-1" data-col="1" data-row="1" data-format="standard"><div class="wpgb-card-wrapper"><div class="wpgb-card-inner"><div class="wpgb-card-media wpgb-scheme-light"><svg data-ratio style="padding-top:56.25%" viewBox="0 0 768 432"></svg><div class="wpgb-card-media-thumbnail"><a href="https://les-clapiottes.fr/assets/uploads/tourte-biere-steak.jpg" tabindex="-1" class="wpgb-handle-lb wpgb-lightbox" data-type="image" data-rel="2" data-title="tourte-biere-steak" title="Agrandir la photo"><div data-bg="https://les-clapiottes.fr/assets/uploads/tourte-biere-steak-768x432.jpg" class="rocket-lazyload" style=""></div><noscript><img class="wpgb-noscript-img" src="https://les-clapiottes.fr/assets/uploads/tourte-biere-steak-768x432.jpg" alt="" height="432" width="768"></noscript></a></div><div class="wpgb-card-media-overlay"></div></div><div class="wpgb-card-content wpgb-scheme-dark"><div class="wpgb-card-body"><h3 class="wpgb-block-3 wpgb-idle-scheme-1"><a target="_self" href="https://les-clapiottes.fr/recettes/tourte-steak-ale-pie/">Tourte au steak et à la bière: Steak and ale pie🍺</a></h3><div class="wpgb-block-6 wpgb-idle-scheme-2"><p>Une tourte savoureuse : viande, légumes sautés, tomates, bière mijotés. Pâte brisée dorée, four croustillant. Recette complète ici 🙂</p></div></div><div class="wpgb-card-footer"><a class="wpgb-block-7" href="https://les-clapiottes.fr/recettes/tourte-steak-ale-pie/">Découvrir</a></div></div></div></div></article>		</div>
+	</div>
+	</div>
+<div class="wpgb-area wpgb-area-bottom-1">
+	<div class="wpgb-facet wpgb-loading wpgb-facet-2" data-facet="2" data-grid="2"></div></div>
+	</div>
+		</div>
+</div>
+</p>
+<a class="btn pink" href="/blog/">Voir tous les articles</a>
+
+</section><section class="faq">
+<div class="row">
+<div class="col1"><span class="smallmaj">Réponses aux questions fréquentes</span>
+<h2 class="withhalfb">Des questions ?</h2>
+<div id="accordionfaq" class="accordion">
+<div class="accordion-item active">
+<h3 class="accordion-header">Où livrez-vous vos Clapiottes ? <i class="fa-solid fa-circle-plus"></i></h3>
+<div class="accordion-content">
+
+<p>Nous livrons Caen ainsi que Breteville-sur-Odon. Nous sommes une jeune entreprise et ne pouvons pas désservir d’autres localités pour l’instant (mais nous gardons bon espoir de pouvoir nous développer rapidement pour vous livrer sur toute l’agglomération Caennaise !</p>
+
+</div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header">Est-ce possible de réserver pour le jour même ? <i class="fa-solid fa-circle-plus"></i></h3>
+<div class="accordion-content">
+
+<p>Pour des raisons d&rsquo;organisation et de production, il n&rsquo;est pas possible de commander pour le jour même : les commandes doivent être passées 24 h avant leur date de livraison.</p>
+
+</div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header">Où peut-on trouver la notice sur les allergènes ? <i class="fa-solid fa-circle-plus"></i></h3>
+<div class="accordion-content">
+
+<p>Cette notice est présente sur chaque fiche de plateau : vous la trouverez en cliquant sur le bouton rose « Composition ».</p>
+
+</div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header">J’ai besoin d’une commande spéciale, c’est possible ? <i class="fa-solid fa-circle-plus"></i></h3>
+<div class="accordion-content">
+
+<p>Oui, vous pouvez nous parler de votre besoin sur la page « <a href="/commande-speciale/">Commande spéciale</a>« , ou bien simplement en nous envoyant un e-mail.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="col2"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Les CLapiottes" data-lazy-src="/assets/uploads/logo-les-clapiottes.svg" /><noscript><img decoding="async" src="/assets/uploads/logo-les-clapiottes.svg" alt="Les CLapiottes" /></noscript>
+<img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Contactez-nous" data-lazy-src="/assets/uploads/contactez-nous.jpg" /><noscript><img decoding="async" src="/assets/uploads/contactez-nous.jpg" alt="Contactez-nous" /></noscript>Vous ne trouvez pas de réponse à votre question ?
+
+<span class="bigbold">Contactez-nous !</span>
+<span class="mail"><i class="fa-solid fa-envelope"></i> contact [@]
+les-clapiottes.fr</span>
+<a class="btn pink sendmail" href="/contact/">Envoyer un message</a>
+</div>
+</div>
+</section><section class="followus"><span class="h2">Suivez-nous</span><p>Retrouvez-nous sur les réseaux sociaux pour retrouver toutes nos
+actualités, nos remises et nos bons plans, en temps réels !</p>
+<ul class="social">
+ 	<li><a href="https://www.facebook.com/les.clapiottes/"><i class="fa-brands fa-facebook-f"></i></a></li>
+ 	<li><a href="https://www.twitter.com/@les_clapiottes/"><i class="fa-brands fa-twitter"></i></a></li>
+ 	<li><a href="https://www.instagram.com/lesclapiottes/"><i class="fa-brands fa-instagram"></i></a></li>
+</ul>
+</section><section class="contactus">
+<h2 class="section-title withb">Nous contacter</h2>
+<p>Vous avez des questions ? Un besoin particulier ? Contactez-nous !</p>
+<div class="row">
+<div class="col col1"><i class="fa-light fa-message-bot"></i><span class="h3">Chatbot</span><p>Les Clapiottes, c’est aussi un chatbot (poli et rapide) qui répond à toutes vos questions !</p>
+
+<a class="btn green" href="#">Poser une question</a>
+
+</div>
+<div class="col col2"><i class="fa-light fa-envelope"></i><span class="h3">Par mail</span><p>Posez-nous votre question via notre formulaire de contact et nous revenons rapidement vers vous.</p>
+
+<a class="btn green" href="/contact/">Nous écrire</a>
+
+</div>
+<div class="col col3"><i class="fa-light fa-phone"></i><span class="h3">Par téléphone</span><p>Old fashion, le téléphone permet cependant d’avoir une réponse immédiate à votre besoin !</p>
+
+<a class="btn green" href="tel:+33649761726">Nous appeler</a>
+
+</div>
+</div>
+</section>		</div>
+
+			</div>
+</article>
+		</main>
+	</div>
+
+	
+	</div>
+</div>
+
+
+<div class="site-footer">
+				<div id="footer-widgets" class="site footer-widgets">
+				<div class="footer-widgets-container grid-container">
+					<div class="inside-footer-widgets">
+							<div class="footer-widget-1">
+		<aside id="block-10" class="widget inner-padding widget_block"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="les Clapiottes" data-lazy-src="/assets/uploads/logo-les-clapiottes.svg"><noscript><img decoding="async" src="/assets/uploads/logo-les-clapiottes.svg" alt="les Clapiottes"></noscript>
+<span>Traiteur à Caen</span>
+<ul><li><a href="tel:+33649761726"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M375.8 275.2c-16.4-7-35.4-2.4-46.7 11.4l-33.2 40.6c-46-26.7-84.4-65.1-111.1-111.1L225.3 183c13.8-11.3 18.5-30.3 11.4-46.7l-48-112C181.2 6.7 162.3-3.1 143.6 .9l-112 24C13.2 28.8 0 45.1 0 64v0C0 300.7 183.5 494.5 416 510.9c4.5 .3 9.1 .6 13.7 .8c0 0 0 0 0 0c0 0 0 0 .1 0c6.1 .2 12.1 .4 18.3 .4l0 0c18.9 0 35.2-13.2 39.1-31.6l24-112c4-18.7-5.8-37.6-23.4-45.1l-112-48zM447.7 480C218.1 479.8 32 293.7 32 64v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0c0-3.8 2.6-7 6.3-7.8l112-24c3.7-.8 7.5 1.2 9 4.7l48 112c1.4 3.3 .5 7.1-2.3 9.3l-40.6 33.2c-12.1 9.9-15.3 27.2-7.4 40.8c29.5 50.9 71.9 93.3 122.7 122.7c13.6 7.9 30.9 4.7 40.8-7.4l33.2-40.6c2.3-2.8 6.1-3.7 9.3-2.3l112 48c3.5 1.5 5.5 5.3 4.7 9l-24 112c-.8 3.7-4.1 6.3-7.8 6.3c-.1 0-.2 0-.3 0z"></path></svg> 06-49-76-17-26</a></li><li>
+<a href="mailto:contact@les-clapiottes.fr"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M64 96c-17.7 0-32 14.3-32 32v39.9L227.6 311.3c16.9 12.4 39.9 12.4 56.8 0L480 167.9V128c0-17.7-14.3-32-32-32H64zM32 207.6V384c0 17.7 14.3 32 32 32H448c17.7 0 32-14.3 32-32V207.6L303.3 337.1c-28.2 20.6-66.5 20.6-94.6 0L32 207.6zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"></path></svg> contact@les-clapiottes.fr</a>
+</li><li><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><path d="M64 48c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16h80V400c0-26.5 21.5-48 48-48s48 21.5 48 48v64h80c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H64zM0 64C0 28.7 28.7 0 64 0H320c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm88 40c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16H104c-8.8 0-16-7.2-16-16V104zM232 88h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16H232c-8.8 0-16-7.2-16-16V104c0-8.8 7.2-16 16-16zM88 232c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16H104c-8.8 0-16-7.2-16-16V232zm144-16h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16H232c-8.8 0-16-7.2-16-16V232c0-8.8 7.2-16 16-16z"/></svg> RCS de Caen : 512537275</li></ul></aside>	</div>
+		<div class="footer-widget-2">
+		<aside id="nav_menu-3" class="widget inner-padding widget_nav_menu"><h2 class="widget-title">Navigation</h2><div class="menu-navigation-footer-container"><ul id="menu-navigation-footer" class="menu"><li id="menu-item-246" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-38 current_page_item menu-item-246"><a href="https://les-clapiottes.fr/" aria-current="page">Accueil</a></li>
+<li id="menu-item-250" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-250"><a href="https://les-clapiottes.fr/plateaux-aperitifs-caen/">Plateaux apéritifs</a></li>
+<li id="menu-item-247" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-247"><a href="https://les-clapiottes.fr/brunch-caen/">Le Brunch</a></li>
+<li id="menu-item-248" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-248"><a href="https://les-clapiottes.fr/commandes-speciales/">Traiteur</a></li>
+<li id="menu-item-249" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-249"><a href="https://les-clapiottes.fr/contact/">Contact</a></li>
+</ul></div></aside>	</div>
+		<div class="footer-widget-3">
+		<aside id="block-17" class="widget inner-padding widget_block"><div class="ftr-text"><span class="h3">Nous suivre</span><ul class="social">
+<li>
+<a href="https://www.facebook.com/les.clapiottes/"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
+</li>
+<li>
+<a href="https://www.twitter.com/@les_clapiottes/"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
+</li>
+<li>
+<a href="https://www.instagram.com/lesclapiottes/"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+</li>
+</ul></div></aside>	</div>
+						</div>
+				</div>
+			</div>
+					<footer class="site-info" aria-label="Site"  itemtype="https://schema.org/WPFooter" itemscope>
+			<div class="inside-site-info grid-container">
+								<div class="copyright-bar">
+					<div class="col">&copy; Les Clapiottes, 2023 | Réalisé avec <i class="fa-solid fa-heart"></i> par GDM-Pixel, tous droits réservés</div><div class="col"><a href="/mentions-legales" />Mentions légales</a> | <a href="/conditions-generales-vente/">CGV</a></div>				</div>
+			</div>
+		</footer>
+		</div>
+
+<script type="rocketlazyloadscript" id="generate-a11y">!function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("mousedown",function(){e.classList.add("using-mouse")}),e.addEventListener("keydown",function(){e.classList.remove("using-mouse")})}}();</script><script type="rocketlazyloadscript" data-rocket-src="https://kit.fontawesome.com/e62c65a3af.js" crossorigin="anonymous" defer></script><script data-minify="1" src="https://les-clapiottes.fr/assets/cache/min/1/assets/js/clapicart.js?ver=1693914398" defer></script>	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<link data-minify="1" rel='stylesheet' id='wpgb-style-css' href='https://les-clapiottes.fr/assets/cache/min/1/assets/plugins/wp-grid-builder/frontend/assets/css/style.css?ver=1693914398' media='all' />
+<link data-minify="1" rel='stylesheet' id='wpgb-grids-css' href='https://les-clapiottes.fr/assets/cache/min/1/assets/wpgb/grids/G2C22.css?ver=1693914398' media='all' />
+
+<script src='https://les-clapiottes.fr/assets/plugins/gp-premium/menu-plus/functions/js/sticky.min.js?ver=2.3.2' id='generate-sticky-js' defer></script>
+<script data-minify="1" src='https://les-clapiottes.fr/assets/cache/min/1/assets/plugins/contact-form-7/includes/swv/js/index.js?ver=1693914398' id='swv-js' defer></script>
+<script id='contact-form-7-js-extra'>
+var wpcf7 = {"api":{"root":"https:\/\/les-clapiottes.fr\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+</script>
+<script data-minify="1" src='https://les-clapiottes.fr/assets/cache/min/1/assets/plugins/contact-form-7/includes/js/index.js?ver=1693914398' id='contact-form-7-js' defer></script>
+<script id='generate-smooth-scroll-js-extra'>
+var smooth = {"elements":[".smooth-scroll","li.smooth-scroll a"],"duration":"800"};
+</script>
+<script src='https://les-clapiottes.fr/assets/plugins/gp-premium/general/js/smooth-scroll.min.js?ver=2.3.2' id='generate-smooth-scroll-js' defer></script>
+<script src='https://les-clapiottes.fr/assets/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.7.9.0' id='jquery-blockui-js' defer></script>
+<script id='wc-add-to-cart-js-extra'>
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"Voir le panier","cart_url":"https:\/\/les-clapiottes.fr\/panier\/","is_cart":"","cart_redirect_after_add":"no"};
+</script>
+<script src='https://les-clapiottes.fr/assets/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=7.9.0' id='wc-add-to-cart-js' defer></script>
+<script src='https://les-clapiottes.fr/assets/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.7.9.0' id='js-cookie-js' defer></script>
+<script id='woocommerce-js-extra'>
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+</script>
+<script src='https://les-clapiottes.fr/assets/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=7.9.0' id='woocommerce-js' defer></script>
+<script id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id='rocket-preload-links-js-extra'>
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/commander\/??(.*)|\/panier\/?|\/mon-compte\/??(.*)|\/wc-api\/v(.*)|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/les-clapiottes.fr","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script src='https://les-clapiottes.fr/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2' id='jquery-ui-core-js' defer></script>
+<script src='https://les-clapiottes.fr/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.13.2' id='jquery-ui-datepicker-js' defer></script>
+<script id="jquery-ui-datepicker-js-after">window.addEventListener('DOMContentLoaded', function() {
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Fermer","currentText":"Aujourd\u2019hui","monthNames":["janvier","f\u00e9vrier","mars","avril","mai","juin","juillet","ao\u00fbt","septembre","octobre","novembre","d\u00e9cembre"],"monthNamesShort":["Jan","F\u00e9v","Mar","Avr","Mai","Juin","Juil","Ao\u00fbt","Sep","Oct","Nov","D\u00e9c"],"nextText":"Suivant","prevText":"Pr\u00e9c\u00e9dent","dayNames":["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"],"dayNamesShort":["dim","lun","mar","mer","jeu","ven","sam"],"dayNamesMin":["D","L","M","M","J","V","S"],"dateFormat":"d MM yy","firstDay":1,"isRTL":false});});
+});</script>
+<!--[if lte IE 11]>
+<script src='https://les-clapiottes.fr/assets/themes/generatepress/assets/js/classList.min.js?ver=3.3.1' id='generate-classlist-js'></script>
+<![endif]-->
+<script id='generate-menu-js-extra'>
+var generatepressMenu = {"toggleOpenedSubMenus":"1","openSubMenuLabel":"Ouvrir le sous-menu","closeSubMenuLabel":"Fermer le sous-menu"};
+</script>
+<script src='https://les-clapiottes.fr/assets/themes/generatepress/assets/js/menu.min.js?ver=3.3.1' id='generate-menu-js' defer></script>
+<script id='generate-woocommerce-js-extra'>
+var generateWooCommerce = {"quantityButtons":"1","stickyAddToCart":"","addToCartPanel":""};
+</script>
+<script src='https://les-clapiottes.fr/assets/plugins/gp-premium/woocommerce/functions/js/woocommerce.min.js?ver=2.3.2' id='generate-woocommerce-js' defer></script>
+<script id='wpgb-js-extra'>
+var wpgb_settings = {"lang":"","ajaxUrl":"\/?wpgb-ajax=action","history":"1","mainQuery":[],"permalink":"https:\/\/les-clapiottes.fr\/","resultMsg":{"plural":"%d r\u00e9sultats trouv\u00e9s","singular":"1 r\u00e9sultat trouv\u00e9","none":"aucun r\u00e9sultat trouv\u00e9"},"hasGrids":"1","hasFacets":"1","hasLightbox":"1","shadowGrids":[],"lightbox":{"plugin":"wp_grid_builder","counterMsg":"[index] \/ [total]","errorMsg":"D\u00e9sol\u00e9, une erreur s\u2019est produite lors du chargement du contenu...","prevLabel":"Diapositive pr\u00e9c\u00e9dente","nextLabel":"Diapositive suivante","closeLabel":"Fermer la visionneuse"},"combobox":{"search":"Veuillez saisir 1 ou plusieurs caract\u00e8res.","loading":"En cours de chargement...","cleared":"options effac\u00e9es.","expanded":"Utilisez les boutons Haut et Bas pour choisir les options, appuyez sur Entr\u00e9e pour s\u00e9lectionner l\u2019option actuellement cibl\u00e9e, appuyez sur \u00c9chap pour r\u00e9duire la liste.","noResults":"Aucun r\u00e9sultat trouv\u00e9.","collapsed":"Appuyez sur Entr\u00e9e ou sur Espace pour d\u00e9velopper la liste.","clearLabel":"Effacer","selected":"option %s s\u00e9lectionn\u00e9e.","deselected":"option %s d\u00e9s\u00e9lectionn\u00e9e."},"autocomplete":{"open":"Utilisez les boutons Haut et Bas pour choisir les suggestions et appuyez sur Entr\u00e9e pour s\u00e9lectionner la suggestion.","input":"Tapez pour rechercher ou appuyez sur Echap pour effacer la saisie.","clear":"Champ effac\u00e9.","noResults":"Aucune suggestion trouv\u00e9e.","loading":"Chargement des suggestions...","clearLabel":"Effacer","select":"suggestion %s a \u00e9t\u00e9 s\u00e9lectionn\u00e9e."},"range":{"minLabel":"Valeur minimale","maxLabel":"Valeur maximale"},"vendors":[{"type":"js","handle":"wpgb-date","source":"https:\/\/les-clapiottes.fr\/assets\/plugins\/wp-grid-builder\/frontend\/assets\/js\/vendors\/date.js","version":1692196757},{"type":"css","handle":"wpgb-date-css","source":"https:\/\/les-clapiottes.fr\/assets\/plugins\/wp-grid-builder\/frontend\/assets\/css\/vendors\/date.css","version":1692196757},{"type":"js","handle":"wpgb-range","source":"https:\/\/les-clapiottes.fr\/assets\/plugins\/wp-grid-builder\/frontend\/assets\/js\/vendors\/range.js","version":1692196757},{"type":"js","handle":"wpgb-select","source":"https:\/\/les-clapiottes.fr\/assets\/plugins\/wp-grid-builder\/frontend\/assets\/js\/vendors\/select.js","version":1692196757},{"type":"js","handle":"wpgb-autocomplete","source":"https:\/\/les-clapiottes.fr\/assets\/plugins\/wp-grid-builder\/frontend\/assets\/js\/vendors\/autocomplete.js","version":1692196757}]};
+</script>
+<script id="wpgb-polyfills-js-before">
+window.addEventListener('wpgb.loaded',function(){(function(){var wpgb=WP_Grid_Builder.instance(1);if(!wpgb.init){return}wpgb.init()})();});
+</script>
+<script data-minify="1" src="https://les-clapiottes.fr/assets/cache/min/1/assets/plugins/wp-grid-builder/frontend/assets/js/polyfills.js?ver=1693914398" defer></script>
+<script data-minify="1" src='https://les-clapiottes.fr/assets/cache/min/1/assets/plugins/wp-grid-builder/frontend/assets/js/facets.js?ver=1693914398' id='wpgb-facets-js' defer></script>
+<script data-minify="1" src='https://les-clapiottes.fr/assets/cache/min/1/assets/plugins/wp-grid-builder/frontend/assets/js/lightbox.js?ver=1693914398' id='wpgb-lightbox-js' defer></script>
+<script data-minify="1" src='https://les-clapiottes.fr/assets/cache/min/1/assets/plugins/wp-grid-builder/frontend/assets/js/layout.js?ver=1693914398' id='wpgb-layout-js' defer></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:100,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:100,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://les-clapiottes.fr/assets/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
+</body>
+</html>
+<!--
+Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com
+
+5354 objets récupérés (701 Ko) depuis Redis grâce à PhpRedis (v5.3.7).
+-->
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1693914398 -->
