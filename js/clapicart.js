@@ -11,6 +11,7 @@ jQuery(document).ready(function ($) {
 		}
 
 		return nextDay;
+		//com de test
 	}
 
 	const defaultDateClapi = getNextAvailableDateClapi();
